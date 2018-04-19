@@ -1,0 +1,64 @@
+extend layout
+
+block content
+    include nav
+    section.project-slide
+      .header-content
+        h1.hey  hey
+        p.heroMission
+          | Life is hard. As a ux designer, I can make life a little easier—and easy is good.
+    section.grid-projects.projectTwoBanner.project-slide#work
+      .centerLeftCol.project-copy
+        p#skillSet  ux design, ux research, ui,
+        h2.projectTitle  MyEtherWallet
+        p.CardContent  Interacting with the blockhcain made easy.
+        .cardLink
+          a#projectTwo.btn View Work
+      .colRight.project-copy
+        img.img-lrg(src="images/projectTwo/homepage_laptop.png")
+    section.grid-projects.projectThreeBanner.project-slide
+      .centerLeftCol.project-copy
+        p#skillSet  ux design
+        h2.projectTitle  ModHealth
+        p.CardContent
+          | Disrupting the healthcare market and empowering customers through customizable healthcare plans.
+        span.cardLink
+          a#projectThree.btn View Work
+      .colRight
+        img.img-sm(src="images/ProjectThree/mobile_modhealth.png")
+    section.grid-projects.projectFourBanner.project-slide
+      .centerLeftCol.project-copy-dark
+        p#skillSet  ux design, ux research, ui
+        h2.projectTitle-dark  Specialized
+        p.cardContent Increasing conversion rates using an already existing e-commerce platform.
+        span.cardLink
+          a#projectFour.btn View Work
+      .colRight-bleed
+        img(src="images/projectFour/ipadiphone.png")
+    section.grid-projects.projectFiveBanner.project-slide
+      .centerLeftCol.project-copy-dark
+        p#skillSet  ux design, vui
+        h2.projectTitle-dark  NHL
+        p.cardContent Deploying brand content through multiple modalities
+        span.cardLink
+          a#projectFive.btn View Work
+      .colRight
+        img.img-md(src="images/projectFive/hero1.png")
+    section.grid-projects.projectSixBanner.project-slide
+      .centerLeftCol.project-copy
+        p#skillSet  ux, front end development
+        h2.projectTitle  MagicMirror
+        p.cardContent Encouraging classroom collaboration through an enchanted object.
+        span.cardLink
+          a#projectSix.btn View Work
+      .colRight.img-center-vert
+        img.img-lrg(src="images/projectSix/mirror_silo1.png")
+    include footer
+    script(src="/js/nav.js")
+    script.
+      jQuery(function($) {
+      $.scrollify({
+      section : ".project-slide",
+
+      });
+      });

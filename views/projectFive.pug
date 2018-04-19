@@ -1,0 +1,130 @@
+extend layout
+
+block content
+    include nav
+    .work-container
+      section.grid.colorSpan1.section
+        .centerLeftCol.hero-copy
+          h2  "When do the Bruins play next?"
+          p
+            | Conversational interfaces can make interacting with your favorite NHL team that much easier.
+        .colRight
+          img.img-md(src="images/projectFive/hero1.png")
+      section.roles.grid.section
+        span.spanImage
+          h3.projectSubtitles
+            | How might we increase customer interactions and conversions using conversational interfaces?
+      section.ask.outcome.grid.colorSpan.section
+        .centerLeftCol
+          h4  The Ask
+          p
+            | Deploy content types through the customer conversion funnel using multiple modalities.
+        .centerRightCol
+          h4  The Outcome
+          p
+            | Leveraging both a voice user interface and chat bots, customers can now execute typical tasks quicker and in some instances seamlessly. In conjunction with tasks we included fun aspects like, team trivia and having Alexa talk in the voice of their favorite announcer/ players.
+      section.grid.section
+        .spanImage
+          figure
+            img.img-sm(src="images/projectFive/nhl_mockup.gif")
+            figcaption
+      section.roles.grid
+        .content
+          div
+            h2  How we got there
+            h4  My role
+            p
+              | I was responsible for developing personas, creating user journeys and determining where the best moment in a customer journey would be to use a conversational interface. I also designed the conversations that a user would have with either the voice interface or a chatbot.
+        .content
+          h2  Why Conversational Interfaces
+          p
+            | The average human attention span is about 12 seconds. That's an incredibly short period of time to try and get potential customers to interface with a brand. When it comes to certain tasks, conversational interfaces can make a user's experience much more pleasurable and in some instances, convert them quicker and with less effort on their part. Having a more pleasurable experience means more brand loyalty and thus increasing the chances for a life long customer. Also, interfaces such as voice allow for micro interactions. For the NHL, this means constant, small interactions like: "What's the Bruins score?" "Is Vatrano playing today?", or “Hey Alexa, put the Bruins game on".
+      section.grid.colorSpan.section
+        .content
+          ul
+            li.img-card
+              figure
+                img.img-sm-left.zoom(src="images/projectFive/conversion_funnel.jpg")
+                figcaption.figcaption-left  Conversion funnel
+              span
+                h4  Conversion Funnel
+                p
+                  | Determining where a conversational interface can be used in the conversion funnel
+            li.img-card
+              figure
+                img.img-sm-left.zoom(src="images/projectFive/user_journey.jpg")
+                figcaption.figcaption-left  High fidelity mockups of new mobile site
+              span
+                h4  User Journey
+                p
+                  | By creating the user journey in the first person, it allows you to truly understand where the emotional fluctuations are and to determine actionable insight.
+            li.img-card
+              figure
+                img.img-sm-left.zoom(src="images/projectFive/layered_user.jpg")
+                figcaption.figcaption-left  High fidelity mockups of new mobile site
+              span
+                h4  User Overlap
+                p
+                  | By layering the conversational conversion funnel on top of the user journey, we can pinpoint where the user would most likely use an alternative interface that would make their task easier for them.
+      section.Discovery.grid.section
+        .content
+          h2  The Discovery
+          figure
+            img.img-lrg.drpshadow(src="images/projectFive/nhl_hompage.png")
+            figcaption.figcaption  NHL Homepage. A lot of information competing for your attention
+          h4  Actionable Insight
+          p
+            | After looking over the persona, user journey, and the conversion funnel we are able to see some key opportunity that we can deliver specific content to the end user.
+          p
+            | Ian, our persona, is a die hard Bruins fan. He and his son love everything about the Bruins. They know the schedule, they know when every home game is and they really try and get tickets to see them at home as often as possible. VUI and chat bots allow for much easier querying of game schedules, team updates, and ticket purchasing. Additionally, once a customer grows accustomed to a voice interface, it allows for larger asks, such as purchasing of merchandise.
+        figure.spanImage
+          img.img-xlrg(src="images/projectFive/nhl_ticket_user_flow.png")
+          figcaption.mid-width.caption
+            | Current cumbersome user journey for current ticket purchasing.
+      section.Solution.grid.section
+        .content
+          h2  Conversational Interfaces
+          h4  We can do better
+          p
+            | Accomplishing tasks with a voice interface is not only what we are used to, but it can rapidly improve current customer tasks. The current user flow to buy tickets is awful. Just to find the team you would like to see, you need to scroll down a never ending page of teams or, you need to use a drop-down menu that is also equally unintuitive. VUI allows customers to take a shortcut, eliminating a lot of pain points.
+          figure
+            img.img-lrg.drpshadow(src="images/projectFive/sayspring_nhl.png")
+            figcaption.justified-right.caption
+              | Using Sayspring to prototype the initial conversations.
+          h4  Voice Interface
+          p
+            | Prototyping conversations and Alexa skills are an easy way to test whether or not conversational interfaces are a fit for a brand. For the NHL, I determined which tasks would be applicable to a VUI or chatbot interface and how difficult it would be to a) implement and b) get customers comfortable.
+        .content.center
+          ul.numbered-list
+            li  Watch / Turn the game on
+            li  NHL Quiz (test your knowledge)
+            li  Learn about the team.
+            li  Figure out the schedule. (multi-modal)
+            li  Be alerted about team news.
+            li  Learn about individual Players.
+            li  Learn about NHL offers, Promotions, Discounts
+            li  Buy Tickets. (multi-modal + app)
+            li  Buy Merchandise. (multi-modal + app)
+        .content
+          figure
+            img.img-xlrg(src="images/projectFive/alexa_nhl.png")
+          h4 Chat Bots
+          p
+            | We need to recognize that there is both a trust and comfort gap that needs to be bridged between traditional methods of conversion, such as buying tickets online, and just asking Alexa to purchase them for you. Using a VUI to earn trust and then using a chatbot to convert is one method of closing that gap. Chat bots still skew towards a more traditional method, where a user can still see visual confirmations, but allows them to complete tasks quicker, such as querying for a specific team jersey or buying tickets.
+      section.what.i.learned.grid.section
+        .content
+          h2  What I learned
+          h4  Context is key
+          p
+            | Though cool, VUI and chatbots are still fairly new and customers are still learning how to interface with them.  Any new interface takes some adjustments. Another incredibly tough hurdle that those who are programming conversational interfaces need to overcome is context. Context is everything when it comes to these types of interactions	. We need to quickly adapt the technology to understand the similarities between ‘pop’ and ‘soda’(something that you and I find easy to understand) and deploy that understanding so that users in certain geographical aren’t hindered in their experiences.
+    .next-project-navigation
+      .previousProject
+        a#projectFour.Project-items
+          i.material-icons arrow_back
+          p Previous Project
+      .nextProject
+        a#projectSix.Project-items
+          i.material-icons arrow_forward
+          p  Next Project
+    include footer
+    script(src="/js/nav.js")

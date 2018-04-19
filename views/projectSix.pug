@@ -1,0 +1,106 @@
+extend layout
+
+block content
+    include nav
+    .work-container
+      section.header.grid.section
+        .hero-copy-dark.centerLeftCol
+          h2  MagicMirror
+          p Encouraging classroom collaboration through an enchanted object.
+        .colRight
+          img.img-lrg(src="images/projectSix/mirror_silo1.png")
+      section.How.might.grid.section
+        span.spanImage
+          h3.projectSubtitles  Creating an enchanted object for our classroom.
+      section.grid.section
+        .content
+          h2  Summary
+          p
+            | After reading David Rose's book
+            a(href="https://www.amazon.com/Enchanted-Objects-Innovation-Design-Technology/dp/1476725640") Enchanted Objects
+            |  we really wanted to create an enchanted object of our own. We did a bit of research and we found a few people who had already created a few
+            |           "magic" mirrors themselves. However, for the most part, none were any larger than 20" or so.  We wanted something much larger, something that other students could collaborate with and something that really grabbed your attention when you saw it. So we opted to go big and use a 50" tv has our jumping off point.
+      section.grid.section
+        .spanImage
+          figure
+            img(src="images/projectSix/full_final.jpg")
+            figcaption  It's hard to take a picture of a mirror and not be in it.
+      section.grid.ideation.colorSpan.section
+        .content
+          h2  Ideation
+          h4  But first, paper and pencil
+          p
+            | I am enrolled in CU Boulder's master program that was formally BDW(Boulder Design Works). When BDW became a part of CU Boulder, they were able to start off fresh in a new space on Walnut Street.  The space was a blank canvas with the exception of some white boards and tables. We(myself and a fellow student, Matt) wanted to add something to the space. We settled on a magic mirror.
+          figure
+            img.image(src="images/projectSix/ideation.jpg")
+          figcaption  Initial concept and roughed out dimensions for the frame.
+          p
+            | One of our classes, Critical Making, focuses on making. It ranges from front end development skills to working with Unity and VR. This project was going to be perfect to sort of combine all the skills we were learning. Working with a Raspberry Pi, running a local server hosting a static website, integrating APIs and building a frame.
+      section.grid.section
+        .spanImage
+          figure
+            img.img-xlrg(src="images/projectSix/collage_process.jpg")
+            figcaption.justified-right.caption
+              | A lot of building went into this magic mirror.
+        .content
+          h2  The Process
+          h4  Software
+          p
+            | For a starting off point we customized an already existing framework for a magic mirror that we found on
+            a(href="https://github.com/leadlag/MagicMirror") github.
+            | .  After getting the code up and running on the Pi we had to make quite a few tweaks and we removed a lot of the features that were pre-existing. Apart from the weather, time, date we wanted to add additional functionality.  We incorporated some crypto currency live price data, integrated a specific slack channel for the mirror and added a countdown for the end of our program
+        .centerLeftCol
+          figure
+            img.img-sm.drpshadow(src="images/projectSix/magicmirror_slack.png")
+            figcaption.justified-right.caption
+              | Didn't get a release for everyone's intelectual property.
+        .centerRightCol
+          figure
+            img.img-sm.drpshadow(src="images/projectSix/slack_api.png")
+            figcaption.justified-right.caption
+              | Slack's api is very intuitive and a pleasure to work with.
+        .content
+          h4  Hardware
+          p
+            | After the software portion was done, I built a frame for the mirror.  The entire frame was constructed from poplar and I used a simple pocket jig to drill holes and assemble the frame.  After assembling the frame it looked great but, looking back retrospectively I would have definitely liked to have made a much nicer frame with dovetails and dado joinery.
+          p
+            | Once the frame was built and the tv was test fit, we ordered a piece of custom cut two way glass for the mirror and everything fit great.
+          figure
+            img.img-md(src="images/projectSix/construction.jpg")
+            figcaption  cut, glue, clamp, repeat
+          h4  Difficuties
+          p
+            | After test fitting the tv, we started to disassemble the bezel around the tv so we that the tv would lay completely flat against the glass. The reason for this was to mitigate the amount of ambient light that could infiltrate between the tv and the glass. Well, this turned out to be a terrible idea. Once we removed the bezel the LCD portion of the tv fell it was destroyed. So now we had to find another tv that would fit the frame we already built. This turned out to be much more difficult than we had previously imagined. Finally we found a replacement and purchased a wall mounting kit for the tv so that we could finally hang the mirror in all it's glory.
+          figure
+            img.img-lrg(src="images/projectSix/broken.jpg")
+          figcaption  Watching the front LCD panel fall and smash was such a terrible feeling
+          p
+            | Nothing is fun unless you run into multiple challenges along the way. Once we received the mounting kit for the TV we test fit it on the wall.  It turns out the mounting brackets on the tv were not designed to hold the weight of a tv, a 50in piece of two-way glass and a wooden frame. The brackets immediately started to sag under the weight of everything and we had to devise a way to disperse the weight from just the tv to both the tv and the frame.
+      section.grid.section
+        .spanImage
+          img(src="images/projectSix/metal_frame.jpg")
+          figcaption  sketched drawings for supporting frame
+      section.grid.section
+        .content
+          h2  Success
+          p
+            | We drew up a plan to use a piece of 1inch square aluminum tubing and two pieces of flat aluminum stock to redistribute the weight from just the tv brackets and to the frame.
+          figure
+            img.md-width-center-img(src="images/projectSix/collage_2.jpg")
+            figcaption  Fabrication of the supporting frame.
+          p
+            | Once the additional aluminum frame was built, we finally were able to hang the magic mirror. It looked great on the wall. All our APIs worked flawlessly and the integration of the slack channel works great. Our whole program has the ability to ssh into the mirror and mess with the code, add new functionality and change the CSS.
+          figure
+            img.img-lrg(src="images/projectSix/details.jpg")
+            figcaption  Final Details
+    .next-project-navigation
+      .previousProject
+        a#projectFive.Project-items
+          i.material-icons arrow_back
+          p Previous Project
+      .nextProject
+        a#projectOne.Project-items
+          i.material-icons arrow_forward
+          p  Next Project
+    include footer
+    script(src="/js/nav.js")
