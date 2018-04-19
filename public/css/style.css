@@ -398,7 +398,7 @@ About
 
 .about-banner {
 	background-color: transparent;
-	background: url('../images/about-banner.jpg');
+	background: url('../images/about/about-banner.jpg');
 	background-position: center;
 	background-size: cover;
 	min-height: 60vh;
