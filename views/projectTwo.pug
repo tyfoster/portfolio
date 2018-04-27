@@ -40,10 +40,15 @@ block content
           img.img-xlrg(src="images/projectTwo/seed.png" alt="seed wallet mockup screens")
           figcaption  Seed phrase in the event that MEW creates deterministic wallets
         .centerRightCol
-          video.img-lrg(autoplay="" loop="")
+          h4  Wallet Seeds
+          p  Deterministic wallets allow for multiple address creation from a single seed. Currently, MEW doesn't offer this, however, should they decide to in the future—this is how I imagine seed protection would look like.
+        .centerLeftCol
+          video(autoplay="" loop="")
             source(src="images/projectTwo/mew_newWallet.webm" type="video/webM")
             source(src="images/projectTwo/mew_newWallet.mp4" type="video/mp4")
-      section.grid.section
+        .centerRightCol
+          h4  New Wallet
+          p  Creating a new wallet using MEW can be full of trust and guidance without scaring a user. Moving from an exchange to a self-managed wallet is important and should feel like something you want to do.
         .content
           h2  How I got there.
           h4  New Technology, Lots to learn.
@@ -118,11 +123,11 @@ block content
           p
             | The user flow now allows anyone to create a wallet easily, login and have access to almost every aspect of the MEW eco-system. Once a wallet is unlocked you can see all aspects of your wallet: private key, keystore, quick access to your QR code and main-net connection status. Additionally, pre-populated list of all your tokens, access to digital collectables/ scare resources, see all your latest transaction and immediate access to the ENS.
         figure.spanImage
-          img.img-xlrg(src="images/projectTwo/walletUnlocked.png" alt="how the new MyEtherWallet wallet would look like once unlocked")
+          img.img-lrg(src="images/projectTwo/mewBrowser.png" alt=" The new website shown inside a browser window.")
       section.grid
         .content
-          figure.img-lrg
-            img.img-xlrg(src="images/projectTwo/mewBrowser.png" alt=" The new website shown inside a browser window.")
+          figure.img-md
+            img(src="images/projectTwo/Unlocked-Wallet_features.png" alt=" The new website shown inside a browser window.")
       section.grid.section
         .content
           h2  What I learned
