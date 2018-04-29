@@ -14,8 +14,11 @@ block content
         p.CardContent  Interacting with the blockhcain made easy.
         .cardLink
           a#projectTwo.btn View Work
-      .colRight.project-copy
-        img.img-lrg(src="images/projectTwo/homepage_laptop.png")
+      .colRight
+        picture
+          source(media='(min-width: 600px)', srcset='images/projectTwo/homepage_laptop.png')
+          source(media='(min-width: 450px)', srcset='images/projectTwo/homepage_laptop_mobile.png')
+          img.img-lrg(src='images/projectTwo/homepage_laptop.png', alt='laptop with mew homepage')
     section.grid-projects.projectThreeBanner.project-slide(data-section-name="ModHealth")
       .centerLeftCol.project-copy
         p#skillSet  ux design
@@ -25,7 +28,10 @@ block content
         span.cardLink
           a#projectThree.btn View Work
       .colRight
-        img.img-sm(src="images/projectThree/mobile_modhealth.png")
+        picture
+          source(media='(min-width: 600px)', srcset='images/projectThree/mobile_modhealth.png')
+          source(media='(min-width: 450px)', srcset='images/projectThree/mobile_modhealth_mobile.png')
+          img.img-sm(src="images/projectThree/mobile_modhealth.png" alt='iphone showing modhealth mobile screen')
     section.grid-projects.projectFourBanner.project-slide(data-section-name="Specialized")
       .centerLeftCol.project-copy-dark
         p#skillSet  ux design, ux research, ui
@@ -34,7 +40,10 @@ block content
         span.cardLink
           a#projectFour.btn View Work
       .colRight-bleed
-        img(src="images/projectFour/ipadiphone.png")
+        picture
+          source(media='(min-width: 600px)', srcset='images/projectFour/ipadiphone.png')
+          source(media='(min-width: 450px)', srcset='images/projectFour/ipadiphone_mobile.png')
+          img(src="images/projectFour/ipadiphone.png" alt='iphone and ipad showing specialized mobile screens')
     section.grid-projects.projectFiveBanner.project-slide(data-section-name="NHL")
       .centerLeftCol.project-copy-dark
         p#skillSet  ux design, vui
@@ -43,7 +52,10 @@ block content
         span.cardLink
           a#projectFive.btn View Work
       .colRight
-        img.img-md(src="images/projectFive/hero1.png")
+        picture
+          source(media='(min-width: 600px)', srcset='images/projectFive/hero1.png')
+          source(media='(min-width: 450px)', srcset='images/projectFive/hero1_mobile.png')
+          img.img-md(src="images/projectFive/hero1.png" alt='Alexa and nhl chatbot screens')
     section.grid-projects.projectSixBanner.project-slide(data-section-name="Magic Mirror")
       .centerLeftCol.project-copy
         p#skillSet  ux, front end development
@@ -52,13 +64,16 @@ block content
         span.cardLink
           a#projectSix.btn View Work
       .colRight.img-center-vert
-        img.img-lrg(src="images/projectSix/mirror_silo1.png")
+        picture
+          source(media='(min-width: 600px)', srcset='images/projectSix/mirror_silo1.png')
+          source(media='(min-width: 450px)', srcset='images/projectSix/mirror_silo1_mobile.png')
+          img.img-lrg(src="images/projectSix/mirror_silo1.png")
     include footer
     script(src="/js/nav.js")
     script.
-      if ($(window).width() <= 1024) {
+      if ($(window).width() <= 600) {
       $.scrollify.disable();
-      }     
+      }
       jQuery(function($) {
       $.scrollify({
       section : ".project-slide",

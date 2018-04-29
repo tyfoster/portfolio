@@ -560,6 +560,7 @@ Individual Projects
 .colRight {
 	padding-bottom: 1em;
 	overflow: hidden;
+	align-self: center
 }
 
 .colRight-bleed {
@@ -622,9 +623,9 @@ Individual Projects
 	max-width: 1200px;
 }
 
-.img-center-vert {
+/* .img-center-vert {
 	align-self: center
-}
+} */
 
 .img-desaturate {
 	filter: grayscale(100%);
