@@ -557,6 +557,16 @@ Individual Projects
 	grid-template-columns: repeat(3, 1fr);
 	justify-content: center;
 }
+.colRight {
+	padding-bottom: 1em;
+	overflow: hidden;
+}
+
+.colRight-bleed {
+	padding-top: 0;
+	overflow: hidden;
+	align-self: end;
+}
 
 .project-overview-desc {
 	max-width: 600px;
@@ -1157,7 +1167,7 @@ Responsive Design
 
 .about-banner {
 	background-color: transparent;
-	background: url('../images/about-banner.jpg');
+	background: url('../images/about/about_banner.jpg');
 	background-position: center;
 	background-size: cover;
 	min-height: 60vh;
