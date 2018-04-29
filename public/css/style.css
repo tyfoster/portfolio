@@ -1226,6 +1226,7 @@ Responsive Design
 		grid-column: 3 / span 2;
 		padding-right: 1em;
 		padding-top: 0;
+		align-self: center;
 	}
 
 	.colRight-bleed {
