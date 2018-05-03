@@ -623,6 +623,8 @@ Individual Projects
 	max-width: 1200px;
 }
 
+
+
 /* .img-center-vert {
 	align-self: center
 } */
@@ -715,9 +717,25 @@ Individual Projects
 /*-----------------------------
 ProjectBanners
 --------------------------*/
-.projectTwoBanner {
+.projectOneBanner {
 	background:
 		linear-gradient(hsla(179,96%,35%, 1), hsla(203,62%,19%,1));
+}
+
+.projectTwoBanner {
+	background:
+		radial-gradient(circle farthest-side, rgba(241,237,234, 1), rgba(232,229,227, 1));
+}
+/* Red Background
+.projectTwoBanner {
+	background:
+		radial-gradient(circle farthest-side, rgba(234, 21, 40, 1), rgba(159, 4, 27, 1));
+}
+*/
+
+.projectTwo {
+	background:
+	linear-gradient(rgba(241,237,234, 1), rgba(232,229,227, 1));
 }
 
 .projectThreeBanner {
@@ -1347,16 +1365,6 @@ Responsive Design
 Work
 --------------------------*/
 
-.projectOne,
-.projectTwo,
-.projectThree,
-.projectFour,
-.projectFive,
-.projectSix {
-	margin-top: 3rem;
-}
-
-}
 
 /*--------------------------------------
 Footer

@@ -3,9 +3,11 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var https = require('https');
 
 var indexRouter = require('./routes/index');
 var aboutRouter = require('./routes/about');
+var p1Router = require('./routes/projectOne');
 var p2Router = require('./routes/projectTwo');
 var p3Router = require('./routes/projectThree');
 var p4Router = require('./routes/projectFour');
@@ -27,7 +29,8 @@ app.use('/jquery-scrollify', express.static(__dirname + '/node_modules/jquery-sc
 
 app.use('/', indexRouter);
 app.use('/about', aboutRouter);
-app.use('/MyEtherWallet', p2Router);
+app.use('/MyEtherWallet', p1Router);
+app.use('/CVS', p2Router);
 app.use('/ModHealth', p3Router);
 app.use('/Specialized', p4Router);
 app.use('/NHL', p5Router);

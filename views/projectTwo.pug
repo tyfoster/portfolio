@@ -3,132 +3,76 @@ extend layout
 block content
     include nav
     .work-container
-      section.grid.projectTwoBanner.section
-        .centerLeftCol.hero-copy
-          h2  Interface with the blockchain, easily.
+      section.grid.projectTwo.section
+        .centerLeftCol.hero-copy-dark
+          h2  Designing for accessibility
           p
-            | New technology is exciting but adoption at times can be tricky. Introducing the new MyEtherWallet, making blockchain approachable.
+            | For an app centered around healthcare, designing for user's disabilities shouldn’t be an after thought.
         .colRight
-          img.img-md(src="images/projectTwo/new_MEW_Homepage.png" alt="new MEW homepage")
+          img.img-md(src="images/projectTwo/cvs_header.png" alt="new cvs app")
       section.roles.grid.section
         span.spanImage
-          h3.projectSubtitles  Applying design thinking and UX consistency to the blockchain.
+          h3.projectSubtitles  How might we modify the CVS pharmacy app such that users with low vision can accomplish tasks more successfully?
       section.ask.outcome.grid.colorSpan.section
         .centerLeftCol
           h4  The Ask
-          p Make interacting with the Ethereum blockchain fun and more easily understood.
+          p Designing for a specific disability, choose and redesign an existing app so that it meets 508 and WCAG compliant standards.
         .centerRightCol
           h4  The Outcome
           p
-            | A new interface that still educates users without instilling fear. Implementing consistency using existing UX patterns already found in the blockchain space and remove jargon.
+            | A CVS app that is WCAG compliant such that a person with low vision can successfully manage and refill their current prescriptions without additional help.
       section.grid.section
-        .spanImage
-          figure
-            img.img-lrg(src="images/projectTwo/homepage_laptop.png" alt="MyEtherWallet homepage shown on a Macbook pro")
-            figcaption
-      section.grid.section
-        .video.content
-          video.img-xlrg(autoplay="" loop="")
-            source(src="images/projectTwo/mew_sendEth.webm" type="video/webM")
-            source(src="images/projectTwo/mew_sendEth.mp4" type="video/web4")
-      section.grid.section
-        figure.spanImage
-          img(src="images/projectTwo/allScreens.png" alt="all the screens for the new MEW website")
-          figcaption
-      section.seed.grid.section
-        figure.centerLeftCol
-          img.img-xlrg(src="images/projectTwo/seed.png" alt="seed wallet mockup screens")
-          figcaption  Seed phrase in the event that MEW creates deterministic wallets
-        .centerRightCol
-          h4  Wallet Seeds
-          p  Deterministic wallets allow for multiple address creation from a single seed. Currently, MEW doesn't offer this, however, should they decide to in the future—this is how I imagine seed protection would look like.
         .centerLeftCol
-          video(autoplay="" loop="")
-            source(src="images/projectTwo/mew_newWallet.webm" type="video/webM")
-            source(src="images/projectTwo/mew_newWallet.mp4" type="video/mp4")
+          figure
+            img.img-lrg(src="images/projectTwo/oldCVSAndroid.png" alt="The old CVS app")
+            figcaption  The old CVS app.
         .centerRightCol
-          h4  New Wallet
-          p  Creating a new wallet using MEW can be full of trust and guidance without scaring a user. Moving from an exchange to a self-managed wallet is important and should feel like something you want to do.
-      section.grid.section
-        .content
-          h2  How I got there.
-          h4  New Technology, Lots to learn.
-          p
-            | Blockchain technology is still in it's nascent stages. As such, there is a fairly steep learning curve that is required. New terms such as gas, Dapps, private and public keys, wallets, crypto currencies and tokens all require knowledge in order to feel comfortable in the space. Creating a simple transaction on a network is a fairly large ask for a new user. Questions begin to arise that lead to trust issues: How do I know I put the correct address in? Did my transaction go through? How long will this take? Where are my tokens stored? How do I send a quicker transaction? Who owns it? If adoption is to occur we need users to become comfortable, confident and knowledgeable.
           figure
-            img.img-lrg.drpshadow(src="images/projectTwo/mew_home.png" alt="the current homepage of MyEtherWallet")
-            figcaption  The current MEW homepage, a lot of information, a lot of warnings.
-          h4  Warnings, notifications and the absence of trust.
-          p
-            | At every turn there are warnings, pop-ups and lists of dos and donts. Notifications about being phished, keys lost, funds stolen, backup requirements and insecure wallet methods constantly paralyze the user with fear. How can we actually expect an average user to possibly want to user this? Imagine going to your bank and having to sort through numerous warnings and notifications about impending threats–would you trust your banks app? Probably not.
-      section.grid.section
-        figure.spanImage
-          img.img-xlrg(src="images/projectTwo/send_ether_current.jpg" alt="Screenshot of the current method to access a wallet")
-          figcaption
-            | The very first time you try and access your wallet, you are warned that using your Keystore is not a secure method even though it is the only way.
-      section.discovery.grid.colorSpan.section
-        .content
-          h2  The Discovery
-          h4  Research
-          p
-            | I interviewed 15 individuals who all had exposure to either blockchains or crypto currencies. Their experience ranged from having knowledge of it but no experience actually interfacing with a blockchain to fairly experienced users who have deployed contracts, own crypto currencies, have made multiple transactions and have used both software and hardware wallets. Very few individuals felt comfortable enough to explain what the blockchain actually was and most of the individuals that I interviewed (including those who already have multiple wallets) consistently felt a lack of trust when using the service. The newer users were all almost immediately overwhelmed.
-          span
-            p.pullquote
-              | "The layout is very, it’s confusing. You never get a warm fuzzy feeling that you are doing something right"
-            p.pullquote-author
-          h4  Hands On: Warnings everywhere.
-          p
-            | All of these warnings show up before you even get to the homepage. If we expect an adoption of blockchain technology, we need to figure out a better way to educate users, not scare them away.
-          figure.spanImage
-            img.img-xlrg.drpshadow(src="images/projectTwo/mew_warnings.png" alt="All the current warnings you see when visiting myetherwallet.com")
-            figcaption  9 warnings before you even get to the website.
-          p
-            | While MyEtherWallet has done a decent job with the UX, there are a lot of aspects that can be improved. The entire website needs UX and UI that closer aligns with the rest of the industry.  For example, when setting up a wallet, your password is incredibly important, yet there is no check-sum to make sure you've input your password correctly. The majority of the confirmations are in the form of 1px borders around input fields, besides being hard to see, they don't take in account those users who are colorblind or who have low vision.
-          figure
-            img.img-lrg(src="images/projectTwo/confirmation.png")
-            figcaption.justified-right.caption
-              | Current password input
-          h4  Current User Flow
-          p
-            | MyEtherWallet is currently laid out in a silo manner. Each task requires the user to either log into their wallet numerous times or, has them repeat tasks.
-            figure
-              img.img-lrg(src="images/projectTwo/old_mew_userflow.png" alt="current user flow of the website")
-              figcaption.justified-right.caption
-          h4  New User Flow
-          p
-            | The redesigned MyEtherWallet allows users to login to their wallets once and complete numerous tasks.
-            figure
-              img.img-lrg(src="images/projectTwo/mew_revamped.png" alt="my suggestion of the new user flow")
-              figcaption.justified-right.caption
-      section.solution.grid.section
-        .content
-          h2  Solution
-          h4  Designing for consistency
-          figure
-            img.img-lrg.img-desaturate(src="images/projectTwo/mew_sketches.png" alt="my sketches of what the new website would look like.")
-          p
-            | After gaining a good understanding of the problem, I decided on several solutions. The first is to simplify the website and remove the warnings that first pop up. Of the 10 people that had used MyEtherWallet, no one remembers the warnings or read them. Focus on education rather than fear.
-          p
-            | Reducing visual overload and non-essential options was a route I took. Nesting navigation, moving gas and network connection options to a less prominent position makes the site less intimidating. The options are still there, but more advanced options shouldn't compete with typical, less involved tasks.
-          h2  User Tasks
-          h4  Applying our insights.
-          p
-            | One of the primary insights I found was that MEW was mainly used for wallet creation, wallet access and interacting with the ENS. Wallets created through MEW still uses progressive disclosure but now confirms your password and provides additional affordances. Lower on the page is a visual reference for all the steps involved with creating a wallet. The cards have progress indicators and when finished, instead of overwhelming you with options to access your wallet. The cards immediately select the keystore option for you and encourage you to migrate your wallet over to MetaMask.
-        .spanImage
-          figure
-            img.img-xlrg(src="images/projectTwo/newWalletCreation.png" alt="New wallet creation screens")
-            figcaption.caption
-      section.grid.colorSpan2.section
-        .content
-          h4  Wallets Revamped
-          p
-            | The user flow now allows anyone to create a wallet easily, login and have access to almost every aspect of the MEW eco-system. Once a wallet is unlocked you can see all aspects of your wallet: private key, keystore, quick access to your QR code and main-net connection status. Additionally, pre-populated list of all your tokens, access to digital collectables/ scare resources, see all your latest transaction and immediate access to the ENS.
-        figure.spanImage
-          img.img-lrg(src="images/projectTwo/mewBrowser.png" alt=" The new website shown inside a browser window.")
+            img.img-lrg(src="images/projectTwo/newCVSAndroid.png" alt="The new CVS app")
+            figcaption  The new app designed for individuals with low vision.
       section.grid
         .content
-          figure.img-md
-            img(src="images/projectTwo/Unlocked-Wallet_features.png" alt=" The new website shown inside a browser window.")
+          h4 Designing for accessibility can be useful for everyone.
+          p The core insights we gained while doing our user research was that the majority of our low vision users preferred apps like Clear or Capital One because of their simple interfaces, discoverability and the affordances that the apps provided. While doing usability testing with our users using CVS's current app we discovered the CVS has a lot of room for improvement from an accessibility standpoint. Some of our insights included: need for dynamic text, the amount of visual clutter, the poor voiceover experience and their current icons. Using this insight, we focused on improving the information architecture, designing for discoverability, improved the icons, improved contrast, designed for dynamic text and group icons and text for a better voiceover experience. We focused on both the iOS and Android viewports.
+          p.pullquote  “It's very easy for somebody who has very narrow vision to get overwhelmed with too much content...That's why I don't use like 90% of my apps.”
+          p.pullquote-author  Interviewee who had Retinopathy
+      section.grid.section
+        .video.content.center
+          video.img-sm(autoplay="" loop="" poster="images/projectTwo/cvs_onboard.gif")
+            source(src="images/projectTwo/cvs_onboard.mp4" type="video/mp4")
+            source(src="images/projectTwo/cvs_onboard.webm" type="video/webM")
+      section.grid.section
+        .content
+          h4 Designing for recognition
+          p After interviewing all of our users who consisted of both visual and non-visual impairments, we concluded that most of the users relied on icons to help complete their intended tasks on an app. However, for those with visual impairments, having icons that were designed using outlines(like the current icons on the CVS app) as opposed to solid shapes made it very difficult to decipher what the icon was. So, besides redesigning the icons, we also wanted to introduce the icons immediately to bolster recognition—and what better place to introduce those icons than on the on-boarding screens.
+      section.seed.grid.section
+        figure.centerLeftCol
+          img.img-xlrg.drpshadow(src="images/projectTwo/rxCard.png" alt="current card")
+          figcaption  Default card.
+        .centerRightCol
+          h4  Default Rx Card
+          p  The default prescription card has two call to actions. The first is details which extends the card down to show additional information about your prescription and a refill button that allows the user quick refill access.
+        .centerLeftCol
+          figure.centerLeftCol
+            img.img-xlrg.drpshadow(src="images/projectTwo/rxCard_Dynamic.png" alt="Rx card with dynamic text")
+            figcaption  RX card with dynamic text
+        .centerRightCol
+          h4 Dynamic Text
+          p  The current CVS app wasn't designed with dynamic text in mind. Dynamic text is incredibly important for people with low vision. We chose one of the longest prescriptions we could find so that we could design for a 200% increase in font size.
+      section.grid
+        picture.spanImage
+          source(media='(min-width: 600px)', srcset='images/projectTwo/dynamicText_allscreens.png')
+          source(media='(min-width: 450px)', srcset='images/projectTwo/dynamicText_allscreens_mobile.png')
+          img.img-xlrg(src='images/projectTwo/dynamicText_allscreens.png', alt='dynamic text screens for CVS')
+      section.grid.section
+        .content
+          h2  Process.
+          p
+            | This project presented us with a lot fo challenges, primarily reaching out and finding users who had low vision and were willing to be interviewed and use the current CVS app. Relating to this, CVS is a relatively new brand to Colorado, very few people use CVS as their pharmacy, nevermind using the actual app. However we eventually found enough users to gain actionable insight. We transcribed all our interviews and created postcards for each of our interviewees and built a mental model using
+            a(href='https://rosenfeldmedia.com/books/mental-models/') Indie Young
+            |  framework.
+          P
+            | Having created a mental model, we were able to pinpoint areas of frustration and joy for our users and create personas that we could use to design from and remain empathetic.  As mentioned previously we discovered several points of frustration when using the app from a user with low vision. Again, these were improving the voiceover experience, implement dynamic text, redesign the icons and simplifying the app.
       section.grid.section
         .content
           h2  What I learned
@@ -136,7 +80,7 @@ block content
             | The blockchain space is difficult, having a much larger group of users would have been great, especially in the discovery phase. Though large improvements have been being made in terms of UX and blockchains, there is still a need for well established and adopted best practices . This entire project was self-driven and some of the solutions I developed and employed are a huge improvement, but having the opportunity to talk to a MEW developer may bring to light additional implementation challenges.
     .next-project-navigation
       .previousProject
-        a#Six.Project-items
+        a#projectOne.Project-items
           i.material-icons arrow_back
           p Previous Project
       .nextProject

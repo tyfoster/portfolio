@@ -7,18 +7,30 @@ block content
         h1.hey  hey
         p.heroMission
           | Life is hard. As a UX designer, I can make life a little easier—and easy is good.
-    section.grid-projects.projectTwoBanner.project-slide#work(data-section-name="MyEtherWallet")
+    section.grid-projects.projectOneBanner.project-slide#work(data-section-name="MyEtherWallet")
       .centerLeftCol.project-copy
         p#skillSet  ux design, ux research, ui,
         h2.projectTitle  MyEtherWallet
         p.CardContent  Interacting with the blockhcain made easy.
         .cardLink
+          a#projectOne.btn View Work
+      .colRight
+        picture
+          source(media='(min-width: 600px)', srcset='images/projectOne/homepage_laptop.png')
+          source(media='(min-width: 450px)', srcset='images/projectOne/homepage_laptop_mobile.png')
+          img.img-lrg(src='images/projectOne/homepage_laptop.png', alt='laptop with mew homepage')
+    section.grid-projects.projectTwoBanner.project-slide#work(data-section-name="CVS")
+      .centerLeftCol.project-copy-dark
+        p#skillSet  ux design, ux research, animation,
+        h2.projectTitle-dark  CVS
+        p.CardContent  Designing for accessibility.
+        .cardLink
           a#projectTwo.btn View Work
       .colRight
         picture
-          source(media='(min-width: 600px)', srcset='images/projectTwo/homepage_laptop.png')
-          source(media='(min-width: 450px)', srcset='images/projectTwo/homepage_laptop_mobile.png')
-          img.img-lrg(src='images/projectTwo/homepage_laptop.png', alt='laptop with mew homepage')
+          source(media='(min-width: 600px)', srcset='images/projectTwo/cvs_hero.png')
+          source(media='(min-width: 450px)', srcset='images/projectTwo/cvs_hero_mobile.png')
+          img.img-sm(src='images/projectTwo/cvs_hero_mobile.png', alt='laptop with mew homepage')
     section.grid-projects.projectThreeBanner.project-slide(data-section-name="ModHealth")
       .centerLeftCol.project-copy
         p#skillSet  ux design
