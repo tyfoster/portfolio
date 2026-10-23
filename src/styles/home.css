@@ -97,15 +97,16 @@
 a.project { cursor: pointer; }
 .project-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; column-gap: 8px; row-gap: 2px; white-space: nowrap; }
 .project-title { font-size: 19px; line-height: 20px; font-weight: 600; letter-spacing: 0.02em; }
-.project-meta { display: inline-grid; justify-items: end; font-size: 13px; line-height: 20px; letter-spacing: 0.02em; color: var(--muted); }
-/* Deepwatch and Schwab: the dates give way to "Go to site" while the item is pointed at */
-.meta-face { grid-area: 1 / 1; transition: opacity 200ms var(--ease-out), filter 200ms var(--ease-out), transform 220ms var(--ease-out); }
-.meta-face[data-face="hover"] { opacity: 0; filter: blur(2px); transform: translateY(3px); }
-.project:focus-visible .meta-face[data-face="rest"] { opacity: 0; filter: blur(2px); transform: translateY(-3px); }
-.project:focus-visible .meta-face[data-face="hover"] { opacity: 1; filter: none; transform: none; color: var(--fg); }
+.project-meta { display: inline-grid; justify-items: start; font-size: 13px; line-height: 20px; letter-spacing: 0.02em; color: var(--muted); }
+/* Deepwatch and Schwab: the dates give way to "Go to site" while the item is pointed at, left-aligned and instant
+   (Ty, 2026-10-23) */
+.meta-face { grid-area: 1 / 1; }
+.meta-face[data-face="hover"] { opacity: 0; }
+.project:focus-visible .meta-face[data-face="rest"] { opacity: 0; }
+.project:focus-visible .meta-face[data-face="hover"] { opacity: 1; color: var(--fg); }
 @media (hover: hover) and (pointer: fine) {
-  .project:hover .meta-face[data-face="rest"] { opacity: 0; filter: blur(2px); transform: translateY(-3px); }
-  .project:hover .meta-face[data-face="hover"] { opacity: 1; filter: none; transform: none; color: var(--fg); }
+  .project:hover .meta-face[data-face="rest"] { opacity: 0; }
+  .project:hover .meta-face[data-face="hover"] { opacity: 1; color: var(--fg); }
 }
 .project-desc { display: block; margin-top: 9px; font-size: 15px; line-height: 20px; letter-spacing: 0.02em; transition: color 200ms var(--ease-out); }
 .project[data-active] { border-top-color: var(--fg); }
@@ -123,6 +124,12 @@ a.project { cursor: pointer; }
   .work-cards { margin-top: 56px; }
   .work-previous { margin-top: 32px; }
   .about { margin-top: 56px; }
+}
+
+/* ---------- Mobile (below 640px): more air around the work sections (Ty, 2026-10-23) ---------- */
+@media (max-width: 639px) {
+  .work-cards { margin-top: 80px; } /* intro to "Current work" */
+  .about { margin-top: 80px; } /* previous work to About */
 }
 
 .card-list { margin-top: 40px; display: flex; flex-direction: column; gap: 32px; }
