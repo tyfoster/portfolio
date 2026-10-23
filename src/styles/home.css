@@ -82,8 +82,17 @@
 .icite-screen { position: absolute; left: calc(var(--show-w) / 2); bottom: 0; width: 86.026%; height: auto; translate: -50% 0; }
 .show-sircus { display: grid; place-items: center; background: var(--sircus); }
 .show-sircus img { width: clamp(240px, 32%, 560px); height: auto; }
+/* Deepwatch and Schwab covers (SIR-326): the comp's fill with the logo centred, sized as in the 921 x 598 comp and
+   scaled to fit the showcase whichever of its sides is tighter. Deepwatch's logo is 482 x 134, Schwab's 250 x 250. */
+.show-deepwatch, .show-schwab { display: grid; place-items: center; }
+.show-deepwatch { background: #e6e8ef; }
+.show-deepwatch img { width: min(100cqw * 482 / 921, 100cqh * 482 / 598); height: auto; }
+.show-schwab { background: #00a0df; }
+.show-schwab img { width: min(100cqw * 250 / 921, 100cqh * 250 / 598); height: auto; }
 .showcase[data-show="icite"] .show-icite,
-.showcase[data-show="sircus"] .show-sircus { opacity: 1; transform: none; filter: none; }
+.showcase[data-show="sircus"] .show-sircus,
+.showcase[data-show="deepwatch"] .show-deepwatch,
+.showcase[data-show="schwab"] .show-schwab { opacity: 1; transform: none; filter: none; }
 
 /* project row ("stepper"): Figma's 212px items, 56px apart, from the left */
 .projects { display: grid; grid-template-columns: repeat(4, minmax(0, 212px)); justify-content: start; column-gap: 56px; }

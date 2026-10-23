@@ -125,7 +125,7 @@ button { font: inherit; color: inherit; letter-spacing: inherit; background: non
   background: linear-gradient(to bottom, rgb(243 244 246) 0, rgb(243 244 246) calc(var(--nav-h) - 12px), rgb(243 244 246 / 0.6) calc(var(--nav-h) + 4px), rgb(243 244 246 / 0) 100%);
 }
 .nav-name { color: var(--ink); }
-.nav-links { display: flex; align-items: center; gap: 21px; color: var(--muted); }
+.nav-links { display: flex; align-items: center; gap: 21px; font-size: 15px; color: var(--muted); } /* About and Contact 15px at every size; the name stays 17px (Ty, 2026-10-23) */
 .nav-link { transition: color 150ms var(--ease-out), opacity 200ms var(--ease-out); }
 @media (hover: hover) and (pointer: fine) {
   .nav-link:hover, .nav-name:hover { color: var(--fg); }
@@ -188,7 +188,6 @@ button { font: inherit; color: inherit; letter-spacing: inherit; background: non
 }
 @media (max-width: 1199px) {
   .footer { padding: 0 var(--gutter); }
-  .nav-links { font-size: 15px; } /* About and Contact on tablet and phone; the name stays 17px (Ty, 2026-10-23) */
 }
 /* one exported asset (both marks), two links laid over it */
 .social { position: relative; width: 57px; height: 18px; }
