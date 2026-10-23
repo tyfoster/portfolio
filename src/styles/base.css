@@ -50,7 +50,7 @@
   :root { --gutter: 16px; }
 }
 @media (min-width: 1200px) {
-  :root { --nav-h: 88px; }
+  :root { --nav-h: 76px; } /* its fade ends at 100px, 16px above the content (Ty, 2026-10-23) */
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -188,6 +188,7 @@ button { font: inherit; color: inherit; letter-spacing: inherit; background: non
 }
 @media (max-width: 1199px) {
   .footer { padding: 0 var(--gutter); }
+  .nav-links { font-size: 15px; } /* About and Contact on tablet and phone; the name stays 17px (Ty, 2026-10-23) */
 }
 /* one exported asset (both marks), two links laid over it */
 .social { position: relative; width: 57px; height: 18px; }

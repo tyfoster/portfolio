@@ -3,9 +3,9 @@
    80px between sections and image containers on desktop, 40px on tablet and mobile;
    24px from a section title to its copy, 16px between paragraphs of one section. */
 
-.case { padding: 64px var(--gutter) 0; }
+.case { padding: 80px var(--gutter) 0; } /* 64px, then 16px lower (Ty, 2026-10-23) */
 /* under the taller desktop nav, the header starts where the home page's intro does */
-@media (min-width: 1200px) { .case { padding-top: 100px; } }
+@media (min-width: 1200px) { .case { padding-top: 116px; } }
 /* case studies: what appears on scroll takes longer than on the home page (durations only, delays unchanged) */
 .page-case { --appear: 1.4; }
 
@@ -52,6 +52,20 @@
   .case-body { margin-top: 40px; gap: 40px; }
   .case-end { margin-top: 40px; }
 }
+/* a new titled section ("My role", "Starting from nothing") sits further from what comes before it than images and
+   quotes do: 104px from 1024px up, 80px below (Ty, 2026-10-23). The margin adds to the flex gap above. */
+.case-body > section.copy:not(:first-child) { margin-top: 24px; }
+@media (max-width: 1023px) {
+  .case-body > section.copy:not(:first-child) { margin-top: 40px; }
+}
+/* images (screens, rows of screens, captioned figures, the closing illustration) get their own margin above and below,
+   on top of the gap: 80px from 1024px up, 40px below (Ty, 2026-10-23). Neighbouring margins share space rather than
+   stacking: between two images, and from an image to a titled section, it counts once. */
+.case-body { --img-m: 80px; }
+@media (max-width: 1023px) { .case-body { --img-m: 40px; } }
+.case-body > :is(.shot-slot, .shot-row, .figure, .illustration) { margin-block: var(--img-m); }
+.case-body > :is(.shot-slot, .shot-row, .figure, .illustration) + :is(.shot-slot, .shot-row, .figure, .illustration) { margin-top: 0; }
+.case-body > :is(.shot-slot, .shot-row, .figure, .illustration) + section.copy { margin-top: 0; }
 
 .copy { width: 100%; max-width: 604px; }
 .copy h2 { margin-bottom: 24px; font-size: 22px; line-height: 32px; font-weight: 500; letter-spacing: 0.02em; color: var(--fg); }

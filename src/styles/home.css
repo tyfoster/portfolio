@@ -15,7 +15,7 @@
      the row when it fits, and runs on below the fold when it does not (a laptop's 930px, Ty 2026-10-22) */
   .home {
     min-height: 100svh;
-    padding: 100px 80px 96px;
+    padding: 116px 80px 72px; /* top: 16px below the nav's fade; bottom: the project row ends 16px above the fixed footer */
     display: grid;
     grid-template-columns: 328px minmax(0, 1fr);
     grid-template-rows: auto 1fr;
@@ -26,7 +26,7 @@
   }
   .home-intro { grid-area: intro; }
   .about { grid-area: about; align-self: end; padding-top: 64px; }
-  .home-work { grid-area: work; align-self: start; display: flex; flex-direction: column; height: calc(100svh - 196px); }
+  .home-work { grid-area: work; align-self: start; display: flex; flex-direction: column; height: calc(100svh - 188px); }
   .showcase { flex: 1 1 auto; min-height: 360px; }
   .projects { flex: none; margin-top: 64px; }
   .work-cards, .work-previous { display: none; }
