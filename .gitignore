@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.DS_Store
+.wrangler/
+.claude/
+*.log
+# the deploy brief lives on the project tracker, not in the public repository
+HANDOFF.md

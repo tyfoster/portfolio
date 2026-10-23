@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- @include head -->
+    <title>Ty Foster</title>
+    <meta name="description" content="Ty Foster leads product and design at Icite, building technically complex, data-dense applications from the ground up with AI." />
+    <meta property="og:title" content="Ty Foster" />
+    <meta property="og:description" content="Product and design at Icite. Builder of Sircus." />
+    <link rel="stylesheet" href="/src/styles/home.css" />
+    <script type="module" src="/src/home.js"></script>
+  </head>
+  <body class="page-home">
+    <!-- @include nav -->
+
+    <main class="home">
+      <p class="intro home-intro" data-enter="headline"><span class="intro-welcome">Welcome.</span> I lead product and design at Icite. I specialize in building technically complex and data-dense applications that are built from the ground-up with AI.</p>
+
+      <!-- Desktop: the picture (Icite by default, Sircus on hover, 2665:30799) and the project row as one column, the window's
+           height less the page's margins, so the row stays on screen however long the About copy runs -->
+      <div class="home-work">
+        <div class="showcase" data-show="icite" data-enter="xl" aria-hidden="true">
+          <!-- Icite picture (2665:30799) in layers: Figma's background, logo, subtitle, and the screen at 82% then 7% larger,
+               centred on the bottom edge (Ty, 2026-10-22) -->
+          <div class="show show-icite">
+            <div class="icite-stage">
+              <img class="icite-logo" src="/img/icite/icite-logo-white.svg" width="479" height="84" alt="" />
+              <p class="icite-sub">Agentic Identity Threat Detection</p>
+              <img class="icite-screen" src="/img/home/icite-screen.webp" width="2709" height="1476" alt="" />
+            </div>
+          </div>
+          <div class="show show-sircus"><img src="/img/home/sircus-logo-white.svg" width="317" height="63" alt="" /></div>
+        </div>
+
+        <!-- Desktop project row (2665:31072); each item is one link target (2665:31073) -->
+        <nav class="projects" aria-label="Work" data-sync="about">
+          <a class="project" href="/icite/" data-project="icite" data-image data-active data-enter="m">
+            <span class="project-head"><span class="project-title">Icite</span><span class="project-meta">Current</span></span>
+            <span class="project-desc">Agentic Identity Threat Detection Platform</span>
+          </a>
+          <a class="project" href="/sircus/" data-project="sircus" data-image data-enter="m">
+            <span class="project-head"><span class="project-title">Sircus</span><span class="project-meta">Side project</span></span>
+            <span class="project-desc">The easiest way to keep track of your elected officials</span>
+          </a>
+          <a class="project" href="https://deepwatch.com" target="_blank" rel="noopener" data-project="deepwatch" data-enter="m">
+            <span class="project-head"><span class="project-title">Deepwatch</span><span class="project-meta"><span class="meta-face" data-face="rest">2022-2024</span><span class="meta-face" data-face="hover" aria-hidden="true">Go to site</span></span></span>
+            <span class="project-desc">Building an industry-leading MDR cybersecurity platform.</span>
+          </a>
+          <a class="project" href="https://www.schwab.com" target="_blank" rel="noopener" data-project="schwab" data-enter="m">
+            <span class="project-head"><span class="project-title">Charles Schwab</span><span class="project-meta"><span class="meta-face" data-face="rest">2019</span><span class="meta-face" data-face="hover" aria-hidden="true">Go to site</span></span></span>
+            <span class="project-desc">Designed and built tools for Schwab Wealth Advisory.</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Tablet and mobile: current work (2665:30226) -->
+      <section class="work-cards" aria-labelledby="current-work">
+        <h2 class="section-label" id="current-work" data-enter="s">Current work</h2>
+        <div class="card-list">
+          <a class="card" href="/icite/" data-enter="l">
+            <span class="card-media card-media--icite"><img src="/img/home/icite-card.webp" width="1030" height="556" alt="Icite: Agentic Identity Threat Detection" /></span>
+            <span class="card-caption"><span>Product Design • Brand • Fundraising</span></span>
+            <span class="card-view">View <img src="/img/icons/arrow-up-right.svg" width="18" height="18" alt="" /></span>
+          </a>
+          <a class="card" href="/sircus/" data-enter="l">
+            <span class="card-media card-media--sircus"><img src="/img/home/sircus-logo-white.svg" width="317" height="63" alt="Sircus" /></span>
+            <span class="card-caption"><span class="card-caption-label">Side project</span><span class="card-caption-text">Easiest way to keep track of your elected officials</span></span>
+            <span class="card-view">View <img src="/img/icons/arrow-up-right.svg" width="18" height="18" alt="" /></span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Tablet and mobile: previous work (2665:30229) -->
+      <section class="work-previous" aria-labelledby="previous-work">
+        <h2 class="section-label" id="previous-work" data-enter="s">Previous work</h2>
+        <div class="previous-list">
+          <a class="previous" href="https://deepwatch.com" target="_blank" rel="noopener" data-enter="m">
+            <span class="previous-logo previous-logo--deepwatch"><img src="/img/home/deepwatch.svg" alt="" /></span>
+            <span class="previous-text">
+              <span class="previous-title">Deepwatch</span>
+              <span class="previous-desc">As a product design manager I led a team of designers building an industry-leading MDR cybersecurity platform.</span>
+            </span>
+          </a>
+          <a class="previous" href="https://www.schwab.com" target="_blank" rel="noopener" data-enter="m">
+            <span class="previous-logo previous-logo--schwab"><img src="/img/home/schwab.webp" width="192" height="188" alt="" /></span>
+            <span class="previous-text">
+              <span class="previous-title">Charles Schwab</span>
+              <span class="previous-desc">Designed and built tools for Schwab Wealth Advisory.</span>
+            </span>
+          </a>
+        </div>
+      </section>
+
+      <!-- About: the mobile frame's copy at every size -->
+      <section class="about" id="about" aria-labelledby="about-title">
+        <h2 class="about-title" id="about-title" data-enter="s">About</h2>
+        <div class="about-copy" data-stagger>
+          <p data-enter="m">I have deep experience building in the cybersecurity and finance industries. I’ve built products that helped grow ARR by $43M, I’ve helped build companies from nothing and I am currently working at Icite which is building AI, Identity tools for Security operations teams.</p>
+          <p data-enter="m">I am a builder at heart and I love the act of creating. For example, check out <a class="text-link" href="/sircus/">Sircus</a> which is a tool I am currently building that helps anyone understand congress and our election process. I also love photography. In a past life, I was a commercial photographer—you can view that work <a class="text-link" href="https://tyfoster.com" target="_blank" rel="noopener">here</a>.</p>
+          <p data-enter="m">I believe deeply in privacy. I think it is an inalienable right that has been commoditized and is now no longer affordable by most people.</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- @include footer footer--fixed -->
+  </body>
+</html>

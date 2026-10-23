@@ -1,0 +1,216 @@
+/* Case studies. Header: Figma 2725:15733. Section spacing: 2683:50571 and 2683:50568. Expanded image: 2725:15147.
+   Centred column: headline and image containers up to 913px, copy up to 604px.
+   80px between sections and image containers on desktop, 40px on tablet and mobile;
+   24px from a section title to its copy, 16px between paragraphs of one section. */
+
+.case { padding: 64px var(--gutter) 0; }
+/* under the taller desktop nav, the header starts where the home page's intro does */
+@media (min-width: 1200px) { .case { padding-top: 100px; } }
+/* case studies: what appears on scroll takes longer than on the home page (durations only, delays unchanged) */
+.page-case { --appear: 1.4; }
+
+.case-header { max-width: 913px; margin: 0 auto; text-align: center; }
+.crumb { font-size: 13px; line-height: 15px; letter-spacing: 0.02em; color: var(--ink); }
+.crumb a { transition: color 150ms var(--ease-out); }
+@media (hover: hover) and (pointer: fine) {
+  .crumb a:hover { color: var(--muted); }
+}
+.case-title { margin-top: 15px; font-size: 38px; line-height: 46px; font-weight: 600; letter-spacing: 0.01em; color: var(--fg); text-wrap: balance; }
+@media (max-width: 639px) {
+  .case-title { font-size: 30px; line-height: 38px; }
+}
+
+.case-actions { margin-top: 24px; display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+.btn-ghost {
+  height: 40px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: 0;
+  color: var(--button-fg);
+  transition: background-color 150ms var(--ease-out), transform 160ms var(--ease-out);
+}
+.btn-ghost img { width: 16px; height: 16px; }
+.btn-ghost:active { transform: scale(0.97); }
+@media (hover: hover) and (pointer: fine) {
+  .btn-ghost:hover { background: rgba(24, 24, 27, 0.06); }
+}
+
+.case-body {
+  margin: 80px auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+}
+.case-end { margin: 80px auto 0; }
+@media (max-width: 1023px) {
+  .case-body { margin-top: 40px; gap: 40px; }
+  .case-end { margin-top: 40px; }
+}
+
+.copy { width: 100%; max-width: 604px; }
+.copy h2 { margin-bottom: 24px; font-size: 22px; line-height: 32px; font-weight: 500; letter-spacing: 0.02em; color: var(--fg); }
+.copy > * + * { margin-top: 16px; }
+.copy > h2 + * { margin-top: 0; }
+.lead { color: var(--muted); }
+
+.list { list-style: disc; padding-left: 25.5px; }
+.list li::marker { color: var(--fg); }
+.list--plain { list-style: none; padding-left: 0; display: flex; flex-direction: column; gap: 16px; }
+
+.facts { display: grid; grid-template-columns: 109px minmax(0, 1fr); row-gap: 8px; line-height: 32px; }
+.copy > .facts { margin-top: 20px; }
+.facts dt { color: var(--muted); }
+@media (max-width: 479px) {
+  .facts { grid-template-columns: 100px minmax(0, 1fr); line-height: 28px; }
+}
+
+.quote { width: 100%; max-width: 604px; border-left: 1.5px solid var(--muted); padding-left: 16px; }
+.quote p { font-size: 22px; line-height: 32px; letter-spacing: 0.02em; color: var(--fg); }
+.quote footer { margin-top: 13px; color: var(--muted); }
+
+.figure { width: 100%; max-width: 913px; display: flex; flex-direction: column; align-items: center; gap: 24px; }
+.figure > figcaption { width: 100%; max-width: 604px; }
+
+.illustration { width: 271px; max-width: 60%; height: auto; }
+
+/* ---------- Image containers ---------- */
+.shot-slot { position: relative; width: 100%; max-width: 913px; aspect-ratio: 700 / 402; }
+.figure > .shot-slot { max-width: none; }
+/* a row of two boxes under a screen (2741:15734, 2741:15737): 277 and 414 of 700, 241 tall, 9 apart; stacked on phones */
+.shot-row { width: 100%; max-width: 913px; display: grid; grid-template-columns: 277fr 414fr; column-gap: calc(100% * 9 / 700); aspect-ratio: 700 / 241; }
+.shot-row > .shot-slot { aspect-ratio: auto; height: 100%; max-width: none; }
+@media (max-width: 639px) {
+  .shot-row { grid-template-columns: 1fr; row-gap: 16px; aspect-ratio: auto; }
+  .shot-row > .shot-slot { height: auto; }
+  .shot-row > .shot-slot:first-child { aspect-ratio: 277 / 241; }
+  .shot-row > .shot-slot:last-child { aspect-ratio: 414 / 241; }
+}
+.shot {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  background: var(--shot);
+  box-shadow: var(--elev-2);
+  text-align: left;
+  cursor: zoom-in;
+}
+div.shot { cursor: default; }
+.shot--logo-icite {
+  /* Figma's radial fill: centred below the frame, 2392 x 711 at 700 x 402 */
+  background: radial-gradient(341.8% 176.8% at 50% 174.25%, #576875 0%, #44505b 25%, #303840 50%, #1d2126 75%, #131518 87.5%, #09090b 100%);
+}
+.shot-stage { position: absolute; left: 0; top: 0; width: 100%; height: 100%; overflow: hidden; transform-origin: 0 0; }
+.shot.is-open .shot-stage { overflow: visible; }
+.shot-img { position: absolute; max-width: none; object-fit: cover; }
+.shot-img--r { border-radius: 12px; }
+.shot-crop { position: absolute; overflow: hidden; }
+.shot-crop > img { position: absolute; max-width: none; }
+
+.shot.is-open .window { border-radius: var(--open-radius, 12px); }
+/* a recording that is its own picture, background and all (Icite): it fills the container, and opens to 16px corners */
+.shot-video { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; }
+.shot.is-open .shot-video { border-radius: var(--open-radius, 0); }
+
+/* an opened picture: the whole image, 16px corners, on the page colour */
+.lightbox { position: fixed; inset: 0; z-index: 100; background: var(--bg); cursor: zoom-out; outline: none; }
+.lightbox-img { position: absolute; max-width: none; transform-origin: 0 0; clip-path: inset(0% 0% 0% 0% round 16px); }
+
+.shot.is-open {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  width: auto;
+  border-radius: 0;
+  box-shadow: none;
+  cursor: zoom-out;
+}
+
+/* a window holding a page that scrolls itself (member, vote) */
+.window { position: absolute; border-radius: 12px; overflow: hidden; background: #18181b; }
+.window > img { width: 100%; height: auto; max-width: none; will-change: transform; }
+
+/* phones with recordings */
+.phone {
+  position: absolute;
+  aspect-ratio: 176.288 / 358;
+  border-radius: 14.5% / 7.1%;
+  background: linear-gradient(160deg, #3c3c42, #1d1d21 55%, #2b2b30);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.14), 0 0 0 1px rgba(0, 0, 0, 0.18), 0 18px 36px -18px rgba(0, 0, 0, 0.45);
+}
+.phone::before, .phone::after { content: ""; position: absolute; width: 1.1%; border-radius: 2px; background: #2a2a2f; }
+.phone::before { left: -1%; top: 18%; height: 9%; }
+.phone::after { right: -1%; top: 24%; height: 12%; }
+.phone-screen { position: absolute; inset: 1.1% 2.4%; border-radius: 12.3% / 5.9%; overflow: hidden; background: #000; }
+.phone-screen video, .phone-screen img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+.phone-screen::after {
+  content: "";
+  position: absolute;
+  top: 1.5%;
+  left: 50%;
+  width: 31%;
+  height: 3.4%;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: #000;
+}
+
+/* seals drifting through a full-width box, 339 tall of 700 (2742:16507 above the screen, 2742:16509 under it): each seal 161
+   across, 11 apart (states) or 17 (government), one centred at rest. The script doubles the row, so moving it by half its
+   length (one copy) loops without a seam; constant motion is linear. Phones take a taller box and larger seals. */
+.shot-slot--seals { aspect-ratio: 700 / 339; }
+.seals { position: absolute; inset: 0; overflow: hidden; container-type: inline-size; display: flex; align-items: center; }
+.seal-track {
+  --seal: calc(100cqw * 161 / 700);
+  --gap: calc(100cqw * 11 / 700);
+  --o: calc((100cqw - var(--seal)) / 2 - var(--seal) - var(--gap));
+  display: flex;
+  flex: none;
+  transform: translateX(var(--o));
+}
+.seals[data-drift="left"] .seal-track { --gap: calc(100cqw * 17 / 700); }
+.seal-track img { flex: none; width: var(--seal); height: auto; margin-right: var(--gap); }
+@media (max-width: 639px) {
+  .shot-slot--seals { aspect-ratio: 16 / 10; }
+  .seal-track { --seal: 40cqw; --gap: calc(40cqw * 11 / 161); }
+  .seals[data-drift="left"] .seal-track { --gap: calc(40cqw * 17 / 161); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .seals.is-looping .seal-track { animation: drift-right 96s linear infinite; }
+  .seals.is-looping[data-drift="left"] .seal-track { animation-name: drift-left; }
+  .seals.is-paused .seal-track { animation-play-state: paused; }
+}
+/* a pointer resting on the seals holds them still, to look at one */
+@media (hover: hover) and (pointer: fine) {
+  .seals:hover .seal-track { animation-play-state: paused; }
+}
+@keyframes drift-right { from { transform: translateX(calc(var(--o) - 50%)); } to { transform: translateX(var(--o)); } }
+@keyframes drift-left { from { transform: translateX(var(--o)); } to { transform: translateX(calc(var(--o) - 50%)); } }
+/* the seals blur as they near either edge (three layers, each blurring more over less, strongest at the edge) and fade into
+   the card: the card's colour runs from solid at the edge to transparent */
+.seals-edge { position: absolute; top: 0; bottom: 0; z-index: 1; width: 17%; pointer-events: none; --to: to right; }
+.seals-edge--l { left: 0; }
+.seals-edge--r { right: 0; --to: to left; }
+.seals-edge > i { position: absolute; inset: 0; }
+.seals-edge > i:nth-child(1) { --mask: linear-gradient(var(--to), #000 0%, #000 35%, transparent 100%); backdrop-filter: blur(1px); -webkit-backdrop-filter: blur(1px); }
+.seals-edge > i:nth-child(2) { --mask: linear-gradient(var(--to), #000 0%, #000 20%, transparent 65%); backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px); }
+.seals-edge > i:nth-child(3) { --mask: linear-gradient(var(--to), #000 0%, transparent 35%); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
+.seals-edge > i { -webkit-mask-image: var(--mask); mask-image: var(--mask); }
+.seals-edge::after { content: ""; position: absolute; inset: 0; background: linear-gradient(var(--to), var(--shot) 0%, transparent 100%); }
+
+/* a phone that runs off the container's bottom (2741:16042) stays cut there when opened */
+.shot--clip.is-open .shot-stage { overflow: hidden; }
+/* stills that take turns on one screen: the next fades in through a light blur */
+.phone-screen[data-rotate] img { position: absolute; inset: 0; opacity: 0; filter: blur(4px); transition: opacity 700ms var(--ease-out), filter 700ms var(--ease-out); }
+.phone-screen[data-rotate] img.is-shown { opacity: 1; filter: none; }
+
+/* the page stays put while a shot fills the screen */
+html.is-locked { overflow: hidden; }

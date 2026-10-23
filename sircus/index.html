@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- @include head -->
+    <title>Sircus · Ty Foster</title>
+    <meta name="description" content="Sircus: building the simplest way to keep track of elected officials. A side project by Ty Foster." />
+    <meta property="og:title" content="Sircus · Ty Foster" />
+    <meta property="og:description" content="Building the simplest way to keep track of elected officials." />
+    <link rel="stylesheet" href="/src/styles/case.css" />
+    <script type="module" src="/src/case.js"></script>
+  </head>
+  <body class="page-case">
+    <!-- @include nav -->
+
+    <!-- Sircus case study: Figma 2683:50417 -->
+    <main class="case">
+      <header class="case-header">
+        <p class="crumb" data-enter="s"><a href="/">work</a> / Sircus</p>
+        <h1 class="case-title" data-enter="headline">Sircus: Building the simplest way to keep track of elected officials</h1>
+        <div class="case-actions" data-enter="s">
+          <a class="btn-ghost" href="https://sircus.io" target="_blank" rel="noopener"><img src="/img/icons/globe.svg" width="16" height="16" alt="" />Visit Sircus</a>
+          <a class="btn-ghost" href="/icite/">Next Project<img src="/img/icons/chevron-right.svg" width="16" height="16" alt="" /></a>
+        </div>
+      </header>
+
+      <div class="case-body">
+        <div class="copy" data-enter="m">
+          <p>Let me ask you something and answer it honestly, Name the three members in congress that represent you.</p>
+        </div>
+
+        <!-- Member page that scrolls itself once (2717:50601): a real Sircus member page, captured from the app -->
+        <div class="shot-slot" data-enter="xl">
+          <button class="shot" type="button" data-focus="15.5,7.338,69,85.323" aria-label="Expand: a Sircus member page">
+            <span class="shot-stage">
+              <span class="window" data-autoscroll style="left: 15.5%; top: 7.338%; width: 69%; height: 85.323%">
+                <img src="/img/sircus/member-sanders.webp" width="2858" height="14456" alt="Bernie Sanders's member page on Sircus: the overview, committees, voting record, campaign finances, stated positions and trades" />
+              </span>
+            </span>
+          </button>
+        </div>
+
+        <div class="copy" data-enter="m">
+          <p>If you could answer any of those questions, you’re way ahead of me. I couldn’t answer any of them, which is exactly why I created Sircus.</p>
+          <p>If you couldn’t. Well, you can <a class="text-link" href="https://sircus.io" target="_blank" rel="noopener">give Sircus a try</a> 👈</p>
+        </div>
+
+        <section class="copy" data-enter="m" aria-labelledby="role">
+          <h2 id="role">My role</h2>
+          <p>I built and designed everything.</p>
+          <dl class="facts">
+            <dt>Role</dt><dd>Founder</dd>
+            <dt>Time</dt><dd>Side project</dd>
+          </dl>
+        </section>
+
+        <section class="copy" data-enter="m" aria-labelledby="brand">
+          <h2 id="brand">The brand</h2>
+          <p>Sircus had to be neutral, accurate and transparent. People on every side need to trust it enough to use it as a source of truth.</p>
+          <p>The wordmark is set in Migra, an expressive serif. Politics is a serious subject, but it’s full of emotion, and Migra carries both. Its curves move like a flag, the kind that flies over the Capitol and over a circus big top.</p>
+        </section>
+
+        <!-- 2718:51347 -->
+        <div class="shot-slot" data-enter="xl">
+          <div class="shot">
+            <span class="shot-stage">
+              <img class="shot-img" src="/img/sircus/sircus-logo-purple.svg" style="left: 28%; top: 39.303%; width: 45.286%; height: 15.743%; object-fit: contain" alt="The Sircus wordmark" />
+            </span>
+          </div>
+        </div>
+
+        <!-- 2742:16519: the brand inside the app -->
+        <div class="copy" data-enter="m">
+          <p>The brand inside of the app is minimal. I really tried to let the content speak for itself. However, there are some nice little design touches, like the seals of each state and from different government offices. On desktop, the state seals really get some space to shine.</p>
+        </div>
+
+        <!-- 2742:16507: state seals drifting left to right, above the screen (Ty, 2026-10-22). The script doubles the row so it
+             loops; the edges blur. The seals are Sircus's own files (docs/seals in its repository). -->
+        <div class="shot-slot shot-slot--seals" data-enter="xl">
+          <div class="shot">
+            <div class="seals" data-drift="right" role="img" aria-label="State seals in Sircus: Hawaii, Montana, Minnesota, Georgia, California, Texas, New York, Colorado, Kansas, Washington, Arizona and New Mexico">
+              <div class="seal-track">
+                <img src="/img/sircus/seals/state-hi.webp" width="320" height="320" loading="lazy" alt="" />
+                <img src="/img/sircus/seals/state-mt.webp" width="320" height="320" loading="lazy" alt="" />
+                <img src="/img/sircus/seals/state-mn.webp" width="320" height="320" loading="lazy" alt="" />
+                <img src="/img/sircus/seals/state-ga.webp" width="320" height="320" loading="lazy" alt="" />
+                <img src="/img/sircus/seals/state-ca.webp" width="320" height="320" loading="lazy" alt="" />
+                <img src="/img/sircus/seals/state-tx.webp" width="320" height="320" loading="lazy" alt="" />
+                <img src="/img/sircus/seals/state-ny.webp" width="320" height="320" loading="lazy" alt="" />
+                <img src="/img/sircus/seals/state-co.webp" width="320" height="320" loading="lazy" alt="" />
+                <img src="/img/sircus/seals/state-ks.webp" width="320" height="320" loading="lazy" alt="" />
+                <img src="/img/sircus/seals/state-wa.webp" width="320" height="320" loading="lazy" alt="" />
+                <img src="/img/sircus/seals/state-az.webp" width="320" height="320" loading="lazy" alt="" />
+                <img src="/img/sircus/seals/state-nm.webp" width="320" height="320" loading="lazy" alt="" />
+              </div>
+              <span class="seals-edge seals-edge--l" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="seals-edge seals-edge--r" aria-hidden="true"><i></i><i></i><i></i></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2742:16488: My lawmakers on desktop for Georgia's 5th district, captured from the app with live data; it runs off
+             the container's right and bottom edges as in the comp (661 x 449 at 53, 41) -->
+        <div class="shot-slot" data-enter="xl">
+          <button class="shot" type="button" aria-label="Expand: My lawmakers on desktop">
+            <span class="shot-stage">
+              <img class="shot-img shot-img--r" src="/img/sircus/lawmakers-desktop.webp" width="2400" height="1630" loading="lazy" style="left: 7.571%; top: 10.199%; width: 94.429%; height: 111.692%" alt="My lawmakers on Sircus on desktop for Georgia's 5th district: the state seal and facts, what's new, and cards for Jon Ossoff, Raphael Warnock and Nikema Williams" />
+            </span>
+          </button>
+        </div>
+
+        <!-- 2742:16509: government seals drifting right to left, under the screen -->
+        <div class="shot-slot shot-slot--seals" data-enter="xl">
+          <div class="shot">
+            <div class="seals" data-drift="left" role="img" aria-label="Government seals in Sircus: the Department of the Interior, the United States Senate, the Office of Personnel Management, the House of Representatives, the Treasury, the State Department, the Department of Justice, the Department of Energy, the Department of Agriculture, the Supreme Court, the Federal Reserve and Veterans Affairs">
+              <div class="seal-track">
+                <img src="/img/sircus/seals/gov-interior.webp" width="320" height="320" loading="lazy" alt="" />
+                <img src="/img/sircus/seals/gov-senate.webp" width="320" height="320" loading="lazy" alt="" />
+                <img src="/img/sircus/seals/gov-personnel-management.webp" width="320" height="320" loading="lazy" alt="" />
+                <img src="/img/sircus/seals/gov-house.webp" width="320" height="320" loading="lazy" alt="" />
+                <img src="/img/sircus/seals/gov-treasury.webp" width="320" height="320" loading="lazy" alt="" />
+                <img src="/img/sircus/seals/gov-state.webp" width="320" height="320" loading="lazy" alt="" />
+                <img src="/img/sircus/seals/gov-justice.webp" width="320" height="320" loading="lazy" alt="" />
+                <img src="/img/sircus/seals/gov-energy.webp" width="320" height="320" loading="lazy" alt="" />
+                <img src="/img/sircus/seals/gov-agriculture.webp" width="320" height="320" loading="lazy" alt="" />
+                <img src="/img/sircus/seals/gov-supreme-court.webp" width="320" height="320" loading="lazy" alt="" />
+                <img src="/img/sircus/seals/gov-federal-reserve.webp" width="320" height="320" loading="lazy" alt="" />
+                <img src="/img/sircus/seals/gov-veterans-affairs.webp" width="320" height="320" loading="lazy" alt="" />
+              </div>
+              <span class="seals-edge seals-edge--l" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="seals-edge seals-edge--r" aria-hidden="true"><i></i><i></i><i></i></span>
+            </div>
+          </div>
+        </div>
+
+        <section class="copy" data-enter="m" aria-labelledby="how">
+          <h2 id="how">How it works</h2>
+          <p>The concept is simple; the execution is not. When you sign up, Sircus asks which topics matter most to you, then asks questions on each to learn where you stand. Bills are read against those same questions, so Sircus knows which side a Yes vote takes. It compares how each of your lawmakers voted on those bills with your answers, along with their campaign money and stock trading if you said those matter to you. Each lawmaker gets an alignment score that always shows its breakdown and evidence. Lawmakers are never ranked, and Sircus never tells you who to vote for.</p>
+        </section>
+
+        <!-- Phones (2683:50536): left, onboarding with three questions answered, then Home and a bill opened from its
+             title; right, a lawmaker card, "View challenger" and the side-by-side comparison. Both recorded from the app
+             with live data. -->
+        <div class="shot-slot" data-enter="xl">
+          <button class="shot" type="button" data-focus="15,3,73,94" aria-label="Expand: onboarding and the challenger comparison">
+            <span class="shot-stage">
+              <span class="phone" style="left: 19%; top: 5.721%; width: 25.184%">
+                <span class="phone-screen">
+                  <video data-autoplay muted playsinline loop preload="none" poster="/media/sircus-onboarding-poster.webp" aria-label="Sircus onboarding: name, ZIP code, lawmakers, a topic and three stance questions, then Home and the License to Drill Act opened from its title">
+                    <source src="/media/sircus-onboarding.mp4" type="video/mp4" />
+                  </video>
+                </span>
+              </span>
+              <span class="phone" style="left: 59.429%; top: 5.473%; width: 25.184%">
+                <span class="phone-screen">
+                  <video data-autoplay muted playsinline loop preload="none" poster="/media/sircus-challengers-poster.webp" aria-label="A lawmaker card on Sircus, then View challenger and the side-by-side comparison">
+                    <source src="/media/sircus-challengers.mp4" type="video/mp4" />
+                  </video>
+                </span>
+              </span>
+            </span>
+          </button>
+        </div>
+
+        <section class="copy" data-enter="m" aria-labelledby="ai">
+          <h2 id="ai">AI’s role in Sircus</h2>
+          <p>Congress doesn’t publish one clean dataset. Sircus reads bill records from govinfo, roll-call votes from the House and Senate clerks, stock-trade disclosures as PDFs and web pages, campaign finance from the FEC, executive orders from the Federal Register, certified ballots from 34 states, and lawmakers’ own campaign sites. Each is in its own format. So far that’s:</p>
+          <ul class="list">
+            <li>18,889 bills and resolutions in this Congress</li>
+            <li>1,591 roll-call votes in this Congress</li>
+            <li>46,381 stock trades by 379 officeholders since 2020</li>
+            <li>289 executive orders since January 2025</li>
+          </ul>
+        </section>
+
+        <!-- A bill page that scrolls itself once (2683:50482's slot): H.Con.Res. 89, the resolution to remove US forces
+             from hostilities with Iran, which the Senate rejected 49 to 50 on 2026-09-24. The bill page rather than the
+             roll call, since it carries the resolution's title. Holds on the header, then the description, then the votes
+             by house. Stops are fractions of the capture's height (584 and the end of 1952px). -->
+        <div class="shot-slot" data-enter="xl">
+          <button class="shot" type="button" data-focus="15.5,7.338,69,85.323" aria-label="Expand: the Iran war powers resolution on Sircus">
+            <span class="shot-stage">
+              <span class="window" data-autoscroll data-stops="0.2992,end" style="left: 15.5%; top: 7.338%; width: 69%; height: 85.323%">
+                <img src="/img/sircus/vote-iran-war-powers.webp" width="2880" height="3904" loading="lazy" alt="H.Con.Res. 89 on Sircus, directing the President to remove US forces from hostilities with Iran: its description and the votes by house, passed by the House 214 to 208 and rejected by the Senate 49 to 50" />
+              </span>
+            </span>
+          </button>
+        </div>
+
+        <div class="copy" data-enter="m">
+          <p>The numbers are easy for code. The language is hard. That’s where AI comes in. It reads through bill summaries, to work out which side of your questions a Yes vote takes and creates an easier summary of what the bill actually means. It’s also particularly useful when reading through all of the campaign websites and determining what each lawmaker is promising if they get elected.</p>
+        </div>
+
+        <section class="copy" data-enter="m" aria-labelledby="neutrality">
+          <h2 id="neutrality">Designing for neutrality</h2>
+          <p>Neutrality is the product, so much of the design work is restraint. The site never says “vote for”, “best match” or “recommended”, and lawmakers are never sorted by score. A bill moves “toward” or “away from” what a visitor said, and both directions are always shown. The record reads the same for everyone.</p>
+        </section>
+
+        <!-- 2741:16042: My lawmakers on a phone, taking turns between three real lawmakers on the 2026 ballot, one per party:
+             Jon Ossoff (D, Georgia) and Cindy Hyde-Smith (R, Mississippi), each the first card under their state, and Kevin
+             Kiley (I, CA-3). The app lists a House member after the senators; in Kiley's still the card was moved to sit first
+             under the state header, like the others (Ty, 2026-10-22). Captured from the app with live data. The phone
+             is smaller than the comp's 60% (44%, centred, 24 from the top) so each card's name and "Up for re-election" show. -->
+        <div class="shot-slot" data-enter="xl">
+          <button class="shot shot--clip" type="button" data-focus="0,0,100,100" aria-label="Expand: My lawmakers on Sircus">
+            <span class="shot-stage">
+              <span class="phone" style="left: 28%; top: 5.97%; width: 44%">
+                <span class="phone-screen" data-rotate="3600">
+                  <img class="is-shown" src="/img/sircus/lawmakers-ossoff.webp" width="1170" height="2532" loading="lazy" alt="My lawmakers for Georgia's 5th district on Sircus: Senator Jon Ossoff, a Democrat, up for re-election" />
+                  <img src="/img/sircus/lawmakers-hyde-smith.webp" width="1170" height="2532" loading="lazy" alt="My lawmakers for Mississippi's 2nd district on Sircus: Senator Cindy Hyde-Smith, a Republican, up for re-election" />
+                  <img src="/img/sircus/lawmakers-kiley.webp" width="1170" height="2532" loading="lazy" alt="My lawmakers for California's 3rd district on Sircus: Representative Kevin Kiley, an independent, up for re-election" />
+                </span>
+              </span>
+            </span>
+          </button>
+        </div>
+
+        <section class="copy" data-enter="m" aria-labelledby="next">
+          <h2 id="next">Where it’s going</h2>
+          <p>In two years we have a huge election. I want everyone to be using Sircus as a voting tool. Validating their emotions with fact. I plan to incorporate more local data in here as well for Gubernatorial and Mayoral elections.</p>
+          <p>I really believe that the politics and elections have turned into a Sircus. In the age of information it is becoming increasingly difficult to find clear, easy to understand and neutral information to base your vote on.</p>
+        </section>
+
+        <!-- 2683:50555 -->
+        <img class="illustration" src="/img/sircus/circus-illustration.webp" width="543" height="457" loading="lazy" data-enter="l" alt="A donkey and an elephant in suits, arm in arm" />
+      </div>
+
+      <div class="case-actions case-end" data-enter="s">
+        <a class="btn-ghost" href="https://sircus.io" target="_blank" rel="noopener"><img src="/img/icons/globe.svg" width="16" height="16" alt="" />Visit Sircus</a>
+        <a class="btn-ghost" href="/icite/">Next Project<img src="/img/icons/chevron-right.svg" width="16" height="16" alt="" /></a>
+      </div>
+    </main>
+
+    <!-- @include footer -->
+  </body>
+</html>

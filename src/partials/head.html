@@ -1,0 +1,13 @@
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#f3f4f6" />
+<link rel="icon" href="data:," />
+<link rel="preload" href="/fonts/PPNeueMontreal-Medium.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/src/styles/base.css" />
+<script>
+  document.documentElement.classList.add("js")
+  // arriving from another page of this site: the nav and footer are already on screen
+  try { if (document.referrer && new URL(document.referrer).origin === location.origin) document.documentElement.classList.add("from-site") } catch (e) {}
+  // never leave the page hidden if the script does not run
+  setTimeout(function () { if (!window.__entered) document.documentElement.classList.remove("js") }, 2500)
+</script>

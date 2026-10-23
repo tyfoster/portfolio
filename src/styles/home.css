@@ -1,0 +1,182 @@
+/* Home. Desktop: Figma 2665:30781 (project row 2665:31072). Tablet: 2665:29691. Mobile: 2665:29692. */
+
+.intro { font-size: 22px; line-height: 32px; letter-spacing: 0.02em; color: var(--fg); }
+.intro-welcome { color: var(--muted); }
+
+.about-title { font-weight: 600; letter-spacing: 0.03em; line-height: 24px; color: var(--muted); }
+.about-copy { margin-top: 8px; display: flex; flex-direction: column; gap: 27px; }
+
+.section-label { font-weight: 600; letter-spacing: 0.03em; line-height: 24px; color: var(--muted-warm); }
+
+/* ---------- Desktop (1200px and up) ---------- */
+@media (min-width: 1200px) {
+  /* fills the window with 80px on each side. The picture and the project row are one column, the window's height less the
+     page's margins, so the row sits at the bottom of the window whatever the About copy's length; About ends level with
+     the row when it fits, and runs on below the fold when it does not (a laptop's 930px, Ty 2026-10-22) */
+  .home {
+    min-height: 100svh;
+    padding: 100px 80px 96px;
+    display: grid;
+    grid-template-columns: 328px minmax(0, 1fr);
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "intro work"
+      "about work";
+    column-gap: clamp(96px, 8.43vw, 211px); /* 211px at 2505px wide (was 111px), scaling down on smaller screens */
+  }
+  .home-intro { grid-area: intro; }
+  .about { grid-area: about; align-self: end; padding-top: 64px; }
+  .home-work { grid-area: work; align-self: start; display: flex; flex-direction: column; height: calc(100svh - 196px); }
+  .showcase { flex: 1 1 auto; min-height: 360px; }
+  .projects { flex: none; margin-top: 64px; }
+  .work-cards, .work-previous { display: none; }
+}
+
+/* the project picture: Icite by default, Sircus while Sircus is hovered. It enters slower than anything else. */
+.showcase[data-enter] { --dur: 1500ms; }
+.showcase {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #09090b;
+  isolation: isolate;
+}
+.show {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: scale(1.015);
+  filter: blur(2px);
+  transition: opacity 260ms var(--ease-out), filter 260ms var(--ease-out), transform 700ms var(--ease-out);
+}
+/* the Icite picture: a 921 x 598 stage (Figma's frame) that covers the showcase from its top-left corner */
+.showcase { container-type: size; }
+.show-icite { overflow: hidden; background: #09090b; }
+.icite-stage {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: max(100cqw, 100cqh * 921 / 598);
+  aspect-ratio: 921 / 598;
+  container-type: inline-size;
+  background: url("data:image/svg+xml;utf8,<svg viewBox='0 0 921 598' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%' width='100%' fill='url(%23grad)' opacity='1'/><defs><radialGradient id='grad' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(1.2632 -107.45 382.53 3.9449 459.35 913.13)'><stop stop-color='rgba(6,149,231,0.15)' offset='0'/><stop stop-color='rgba(8,79,121,0.575)' offset='0.2804'/><stop stop-color='rgba(8,44,66,0.7875)' offset='0.4206'/><stop stop-color='rgba(9,27,39,0.89375)' offset='0.4907'/><stop stop-color='rgba(9,18,25,0.94688)' offset='0.52575'/><stop stop-color='rgba(9,9,11,1)' offset='0.5608'/></radialGradient></defs></svg>") 0 0 / 100% 100% no-repeat;
+}
+.icite-logo { position: absolute; left: 2.606%; top: 4.013%; width: 8.478%; height: auto; }
+.icite-sub {
+  position: absolute;
+  left: 2.606%;
+  top: 7.023%;
+  margin: 0;
+  white-space: nowrap;
+  font-weight: 400;
+  font-size: calc(100cqw * 15 / 921);
+  line-height: calc(100cqw * 24 / 921);
+  letter-spacing: 0.03em;
+  color: #adc9db;
+}
+/* the screen: Figma's box (98.046% wide) at 82%, then 7% larger (Ty, 2026-10-22), centred across the visible
+   picture and sitting on the stage's bottom edge. --show-w is the showcase's width, taken where .showcase is the
+   container; without @property it falls back to the stage's width, which matches it at desktop proportions. */
+@property --show-w { syntax: "<length>"; inherits: true; initial-value: 0px; }
+.show-icite { --show-w: 100cqw; }
+.icite-screen { position: absolute; left: calc(var(--show-w) / 2); bottom: 0; width: 86.026%; height: auto; translate: -50% 0; }
+.show-sircus { display: grid; place-items: center; background: var(--sircus); }
+.show-sircus img { width: clamp(240px, 32%, 560px); height: auto; }
+.showcase[data-show="icite"] .show-icite,
+.showcase[data-show="sircus"] .show-sircus { opacity: 1; transform: none; filter: none; }
+
+/* project row ("stepper"): Figma's 212px items, 56px apart, from the left */
+.projects { display: grid; grid-template-columns: repeat(4, minmax(0, 212px)); justify-content: start; column-gap: 56px; }
+.project {
+  display: block;
+  border-top: 1.5px solid var(--rule);
+  padding-top: 16px;
+  color: var(--muted);
+  transition: border-color 200ms var(--ease-out), color 200ms var(--ease-out);
+}
+a.project { cursor: pointer; }
+.project-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; column-gap: 8px; row-gap: 2px; white-space: nowrap; }
+.project-title { font-size: 19px; line-height: 20px; font-weight: 600; letter-spacing: 0.02em; }
+.project-meta { display: inline-grid; justify-items: end; font-size: 13px; line-height: 20px; letter-spacing: 0.02em; color: var(--muted); }
+/* Deepwatch and Schwab: the dates give way to "Go to site" while the item is pointed at */
+.meta-face { grid-area: 1 / 1; transition: opacity 200ms var(--ease-out), filter 200ms var(--ease-out), transform 220ms var(--ease-out); }
+.meta-face[data-face="hover"] { opacity: 0; filter: blur(2px); transform: translateY(3px); }
+.project:focus-visible .meta-face[data-face="rest"] { opacity: 0; filter: blur(2px); transform: translateY(-3px); }
+.project:focus-visible .meta-face[data-face="hover"] { opacity: 1; filter: none; transform: none; color: var(--fg); }
+@media (hover: hover) and (pointer: fine) {
+  .project:hover .meta-face[data-face="rest"] { opacity: 0; filter: blur(2px); transform: translateY(-3px); }
+  .project:hover .meta-face[data-face="hover"] { opacity: 1; filter: none; transform: none; color: var(--fg); }
+}
+.project-desc { display: block; margin-top: 9px; font-size: 15px; line-height: 20px; letter-spacing: 0.02em; transition: color 200ms var(--ease-out); }
+.project[data-active] { border-top-color: var(--fg); }
+.project[data-active] .project-title { color: var(--fg); }
+.project[data-active] .project-desc { color: var(--sub); }
+
+/* ---------- Tablet and mobile (below 1200px) ---------- */
+@media (max-width: 1199px) {
+  .home {
+    max-width: calc(547px + 2 * var(--gutter));
+    margin: 0 auto;
+    padding: 96px var(--gutter) 128px;
+  }
+  .home-work { display: none; }
+  .work-cards { margin-top: 56px; }
+  .work-previous { margin-top: 32px; }
+  .about { margin-top: 56px; }
+}
+
+.card-list { margin-top: 40px; display: flex; flex-direction: column; gap: 32px; }
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  border-radius: 16px;
+  background: var(--card);
+  box-shadow: var(--elev-1);
+  transition: box-shadow 200ms var(--ease-out), transform 160ms var(--ease-out);
+}
+.card:active { transform: scale(0.99); }
+@media (hover: hover) and (pointer: fine) {
+  .card:hover { box-shadow: var(--elev-2); }
+}
+.card-media { height: 278px; border-radius: 12px; overflow: hidden; }
+.card-media--icite img { width: 100%; height: 100%; object-fit: cover; object-position: left top; }
+.card-media--sircus { display: grid; place-items: center; background: var(--sircus); }
+.card-media--sircus img { width: min(317px, 62%); height: auto; }
+.card-caption { display: flex; gap: 8px; font-size: 15px; line-height: 24px; letter-spacing: 0.03em; color: var(--ink); }
+.card-caption-label { flex-shrink: 0; }
+.card-caption-text { font-weight: 400; }
+.card-view { align-self: flex-end; display: inline-flex; align-items: center; gap: 8px; font-size: 15px; line-height: 24px; font-weight: 600; letter-spacing: 0.03em; color: var(--ink); }
+.card-view img { width: 18px; height: 18px; }
+
+.previous-list { margin-top: 40px; display: flex; flex-direction: column; gap: 24px; }
+.previous { display: flex; gap: 9px; align-items: flex-start; }
+.previous-logo {
+  position: relative;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--card);
+  box-shadow: var(--elev-1);
+}
+.previous-logo--deepwatch img { position: absolute; left: 21.94%; top: 16.67%; width: 56.12%; height: 64.7%; }
+.previous-logo--schwab img { position: absolute; left: -1px; top: 0; width: 50px; height: 48px; max-width: none; object-fit: cover; }
+.previous-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.previous-title { font-size: 19px; line-height: 24px; font-weight: 600; letter-spacing: 0.03em; color: var(--ink); }
+.previous-desc { font-size: 15px; line-height: 23px; letter-spacing: 0.03em; color: var(--muted-warm); }
+a.previous .previous-title { transition: color 150ms var(--ease-out); }
+@media (hover: hover) and (pointer: fine) {
+  a.previous:hover .previous-title { color: var(--muted); }
+}
+
+/* the About paragraphs rise in through a very light blur */
+@media (prefers-reduced-motion: no-preference) {
+  .js .about-copy > [data-enter].is-in { animation-name: enter-soft; }
+}
+@keyframes enter-soft {
+  from { opacity: 0; transform: translateY(var(--rise, 12px)); filter: blur(3px); }
+  to { opacity: 1; transform: none; filter: blur(0); }
+}

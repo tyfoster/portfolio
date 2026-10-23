@@ -1,0 +1,241 @@
+/* Shared foundation: fonts, tokens, nav, footer, entrance motion. Figma file u8vwXXa13lvLcmhpj46hhB. */
+
+@font-face {
+  font-family: "PP Neue Montreal";
+  src: url("/fonts/PPNeueMontreal-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PP Neue Montreal";
+  src: url("/fonts/PPNeueMontreal-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PP Neue Montreal";
+  src: url("/fonts/PPNeueMontreal-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light;
+  --bg: #f3f4f6;
+  --fg: #1d222c;
+  --ink: #000;
+  --muted: #606c84;
+  --muted-soft: #646e7c;
+  --muted-warm: #65686b;
+  --sub: #3d4556;
+  --rule: #a3b2cf;
+  --card: #f8fafc;
+  --shot: #ebecf0; /* a case study's content cards (2717:50601) */
+  --button-fg: #18181b;
+  --sircus: #7263e4;
+  --elev-1: 0 0 0 1px rgba(0, 0, 0, 0.06), 0 1px 1px -0.5px rgba(0, 0, 0, 0.06);
+  --elev-2: var(--elev-1), 0 3px 3px -1.5px rgba(0, 0, 0, 0.06);
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  /* entrance pace: 1.35 = the load motion 35% slower than the base durations below (JS reads it for delays too) */
+  --pace: 1.35;
+  --font: "PP Neue Montreal", ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --nav-h: 56px;
+  --gutter: 24px;
+}
+@media (max-width: 639px) {
+  :root { --gutter: 16px; }
+}
+@media (min-width: 1200px) {
+  :root { --nav-h: 88px; }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scrollbar-gutter: stable;
+  scroll-padding-top: calc(var(--nav-h) + 24px);
+}
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font);
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+h1, h2, h3, p, ul, ol, dl, dd, figure, blockquote { margin: 0; }
+h1, h2, h3 { font-size: inherit; font-weight: inherit; }
+ul, ol { padding: 0; }
+img, video, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; letter-spacing: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+:focus-visible { outline: 2px solid var(--fg); outline-offset: 3px; border-radius: 4px; }
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+.text-link { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; text-decoration-color: rgba(29, 34, 44, 0.35); transition: text-decoration-color 150ms var(--ease-out); }
+@media (hover: hover) and (pointer: fine) {
+  .text-link:hover { text-decoration-color: currentColor; }
+}
+
+/* ---------- Top nav (Figma 2725:15653). Content blurs, then fades, as it scrolls under it. ---------- */
+.nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 50;
+  height: var(--nav-h);
+  padding: 0 var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 17px;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+}
+/* desktop: the home page's nav (2665:30789) on every page, at the content's 80px side margins; About is the left
+   column on the home page, so the nav carries it only on tablet and phone */
+@media (min-width: 1200px) {
+  .nav { padding: 40px 80px 0; align-items: flex-start; }
+  .nav-about { display: none; }
+}
+/* progressive blur: each layer blurs more and covers less, ending opaque at the top edge */
+.nav-blur { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
+.nav-blur > span { position: absolute; inset: 0; }
+.nav-blur > span:nth-child(1) { --mask: linear-gradient(to top, transparent 0%, #000 30%, #000 100%); backdrop-filter: blur(1px); -webkit-backdrop-filter: blur(1px); }
+.nav-blur > span:nth-child(2) { --mask: linear-gradient(to top, transparent 25%, #000 55%, #000 100%); backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px); }
+.nav-blur > span:nth-child(3) { --mask: linear-gradient(to top, transparent 50%, #000 80%, #000 100%); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+.nav-blur > span:nth-child(-n + 3) { -webkit-mask-image: var(--mask); mask-image: var(--mask); }
+.nav-blur > span:nth-child(4) {
+  background: linear-gradient(to bottom, rgba(243, 244, 246, 0.95) 0%, rgba(243, 244, 246, 0.85) 45%, rgba(243, 244, 246, 0) 100%);
+}
+.nav-name { color: var(--ink); }
+.nav-links { display: flex; align-items: center; gap: 21px; color: var(--muted); }
+.nav-link { transition: color 150ms var(--ease-out), opacity 200ms var(--ease-out); }
+@media (hover: hover) and (pointer: fine) {
+  .nav-link:hover, .nav-name:hover { color: var(--fg); }
+}
+
+/* Contact: hover shows the email (fine pointers), a click or tap copies it */
+.contact { position: relative; display: inline-grid; justify-items: end; }
+.contact-face {
+  grid-area: 1 / 1;
+  white-space: nowrap;
+  transition: opacity 200ms var(--ease-out), filter 200ms var(--ease-out), transform 220ms var(--ease-out);
+}
+.contact-face:not([data-face="label"]) { position: absolute; right: 0; top: 0; }
+.contact[data-state="label"] .contact-face:not([data-face="label"]),
+.contact[data-state="email"] .contact-face:not([data-face="email"]),
+.contact[data-state="copied"] .contact-face:not([data-face="copied"]) {
+  opacity: 0;
+  filter: blur(3px);
+  transform: translateY(3px);
+  pointer-events: none;
+}
+/* the address comes into focus letter by letter, left to right: each letter clears its blur a moment after the one before
+   (main.js gives each its index); it leaves all at once */
+.contact[data-state] .contact-face[data-face="email"] { filter: none; transform: none; }
+.contact-face[data-face="email"] > span { opacity: 0; filter: blur(5px); transition: opacity 120ms var(--ease-out), filter 120ms var(--ease-out); }
+.contact[data-state="email"] .contact-face[data-face="email"] > span {
+  opacity: 1;
+  filter: blur(0);
+  transition: opacity 260ms var(--ease-out) calc(var(--i) * 13ms), filter 340ms var(--ease-out) calc(var(--i) * 13ms);
+}
+@media (prefers-reduced-motion: reduce) {
+  .contact-face[data-face="email"] > span, .contact[data-state="email"] .contact-face[data-face="email"] > span { filter: none; transition: opacity 150ms var(--ease-out); }
+}
+.contact[data-state="email"], .contact[data-state="copied"] { color: var(--fg); }
+.nav-links:has(.contact[data-state="email"]) .nav-about,
+.nav-links:has(.contact[data-state="copied"]) .nav-about { opacity: 0; pointer-events: none; }
+@media not ((hover: hover) and (pointer: fine)) {
+  .contact-face[data-face="email"] { display: none; }
+}
+
+/* ---------- Footer (Figma 2665:30794) ---------- */
+.footer {
+  height: 56px;
+  padding: 0 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  color: var(--muted-soft);
+}
+.footer--fixed {
+  position: fixed;
+  inset: auto 0 0 0;
+  z-index: 40;
+  background: rgba(243, 244, 246, 0.9);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+@media (max-width: 1199px) {
+  .footer { padding: 0 var(--gutter); }
+}
+/* one exported asset (both marks), two links laid over it */
+.social { position: relative; width: 57px; height: 18px; }
+.social img { width: 57px; height: 18px; }
+.social-hit { position: absolute; top: -9px; width: 36px; height: 36px; border-radius: 8px; transition: background-color 150ms var(--ease-out); }
+.social-hit--in { left: -9px; }
+.social-hit--x { left: 30px; }
+@media (hover: hover) and (pointer: fine) {
+  .social-hit:hover { background: rgba(29, 34, 44, 0.06); }
+}
+
+/* ---------- Entrance motion ----------
+   Headline first (fades up 16px), the rest staggers after it, nav and footer blur in last.
+   Larger elements take longer. Only applies once JS has marked the page (.js on <html>). */
+.js [data-enter]:not(.is-in) { opacity: 0; }
+.js [data-enter].is-in {
+  animation: enter calc(var(--dur, 600ms) * var(--pace) * var(--appear, 1)) var(--ease-out) var(--delay, 0ms) backwards;
+}
+[data-enter="s"] { --dur: 450ms; --rise: 10px; }
+[data-enter="m"] { --dur: 600ms; --rise: 12px; }
+[data-enter="l"] { --dur: 800ms; --rise: 16px; }
+[data-enter="xl"] { --dur: 950ms; --rise: 20px; }
+[data-enter="headline"] { --dur: 750ms; --rise: 16px; }
+@keyframes enter {
+  from { opacity: 0; transform: translateY(var(--rise, 12px)); }
+  to { opacity: 1; transform: none; }
+}
+.js [data-chrome]:not(.is-in) { opacity: 0; }
+.js [data-chrome].is-in { animation: chrome calc(900ms * var(--pace)) var(--ease-out) var(--delay, 0ms) backwards; }
+@keyframes chrome {
+  from { opacity: 0; filter: blur(6px); }
+  to { opacity: 1; filter: blur(0); }
+}
+/* on a case study, what sits below the fold at load is simply there: no scroll animations */
+.js [data-enter].is-still { animation: none; }
+/* arriving from another page of the site, the nav and footer are already in place */
+.js.from-site [data-chrome] { opacity: 1; animation: none; }
+@media (prefers-reduced-motion: reduce) {
+  .js [data-enter].is-in { animation-name: fade; animation-duration: 300ms; }
+  .js [data-chrome].is-in { animation-name: fade; animation-duration: 300ms; }
+  @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+}
+
+/* ---------- Between pages ----------
+   Browsers with cross-document view transitions fade the page you leave over the one you arrive at (the nav and
+   footer sit in the same place on both, so they hold still), then the new page's content staggers in. */
+@view-transition { navigation: auto; }
+::view-transition-old(root) { animation: page-out 260ms var(--ease-out) both; }
+::view-transition-new(root) { animation: none; }
+@keyframes page-out { to { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  @view-transition { navigation: none; }
+}
