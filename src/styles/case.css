@@ -47,10 +47,9 @@
   align-items: center;
   gap: 80px;
 }
-.case-end { margin: 80px auto 0; }
+.case-end { margin: 80px auto; } /* the closing Visit / Next project row: 80px above and below at every size (Ty, 2026-10-23) */
 @media (max-width: 1023px) {
   .case-body { margin-top: 40px; gap: 40px; }
-  .case-end { margin-top: 40px; }
 }
 /* a new titled section ("My role", "Starting from nothing") sits further from what comes before it than images and
    quotes do: 104px from 1024px up, 80px below (Ty, 2026-10-23). The margin adds to the flex gap above. */
@@ -66,6 +65,13 @@
 .case-body > :is(.shot-slot, .shot-row, .figure, .illustration) { margin-block: var(--img-m); }
 .case-body > :is(.shot-slot, .shot-row, .figure, .illustration) + :is(.shot-slot, .shot-row, .figure, .illustration) { margin-top: 0; }
 .case-body > :is(.shot-slot, .shot-row, .figure, .illustration) + section.copy { margin-top: 0; }
+/* customer quotes: 104px of margin above and below at every size, on top of the gap (Ty, 2026-10-23). Shared with a
+   neighbouring image's margin and with a following section's, never stacked. */
+.case-body > .quote { margin-block: 104px; }
+.case-body > :is(.shot-slot, .shot-row, .figure, .illustration) + .quote { margin-top: calc(104px - var(--img-m)); }
+.case-body > .quote + :is(.shot-slot, .shot-row, .figure, .illustration, section.copy) { margin-top: 0; }
+/* the closing row's 80px is the whole space above it, so whatever ends the body gives up its bottom margin */
+.case-body > :last-child { margin-bottom: 0; }
 
 .copy { width: 100%; max-width: 604px; }
 .copy h2 { margin-bottom: 24px; font-size: 22px; line-height: 32px; font-weight: 500; letter-spacing: 0.02em; color: var(--fg); }
