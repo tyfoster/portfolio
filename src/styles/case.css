@@ -15,7 +15,7 @@
 @media (hover: hover) and (pointer: fine) {
   .crumb a:hover { color: var(--muted); }
 }
-.case-title { margin-top: 15px; font-size: 38px; line-height: 46px; font-weight: 600; letter-spacing: 0.01em; color: var(--fg); text-wrap: balance; }
+.case-title { margin-top: 40px; /* breadcrumb to title, every size (Ty, 2026-10-23) */ font-size: 38px; line-height: 46px; font-weight: 600; letter-spacing: 0.01em; color: var(--fg); text-wrap: balance; }
 @media (max-width: 639px) {
   .case-title { font-size: 30px; line-height: 38px; }
 }

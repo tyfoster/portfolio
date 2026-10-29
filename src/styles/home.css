@@ -1,10 +1,28 @@
 /* Home. Desktop: Figma 2665:30781 (project row 2665:31072). Tablet: 2665:29691. Mobile: 2665:29692. */
 
 .intro { font-size: 22px; line-height: 32px; letter-spacing: 0.02em; color: var(--fg); }
-.intro-welcome { color: var(--muted); }
+.intro-welcome { color: var(--accent); } /* "Welcome." in the F mark's orange (Ty, 2026-10-28) */
 
 .about-title { font-weight: 600; letter-spacing: 0.03em; line-height: 24px; color: var(--muted); }
 .about-copy { margin-top: 8px; display: flex; flex-direction: column; gap: 27px; }
+/* About links (Sircus, here): a dashed underline drawn as a background so the dashes can move. On hover the link and its
+   dashes turn orange and the dashes slide right for two dash lengths, then settle (Ty, 2026-10-28). */
+.about-copy .text-link {
+  --dash: rgba(29, 34, 44, 0.35);
+  text-decoration: none;
+  background-image: linear-gradient(to right, var(--dash) 0 4px, transparent 4px 7px);
+  background-size: 7px 1px;
+  background-repeat: repeat-x;
+  background-position: 0 calc(100% - 1px);
+  padding-bottom: 3px;
+  transition: color 200ms var(--ease-out), --dash 200ms var(--ease-out);
+}
+@property --dash { syntax: "<color>"; inherits: false; initial-value: rgba(29, 34, 44, 0.35); }
+.about-copy .text-link:hover, .about-copy .text-link:focus-visible { color: var(--accent); --dash: var(--accent); }
+@media (prefers-reduced-motion: no-preference) {
+  .about-copy .text-link:hover, .about-copy .text-link:focus-visible { animation: dash-march 600ms var(--ease-out); }
+}
+@keyframes dash-march { from { background-position-x: 0; } to { background-position-x: 14px; } }
 
 .section-label { font-weight: 600; letter-spacing: 0.03em; line-height: 24px; color: var(--muted-warm); }
 

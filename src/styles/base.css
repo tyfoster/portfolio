@@ -36,6 +36,7 @@
   --shot: #ebecf0; /* a case study's content cards (2717:50601) */
   --button-fg: #18181b;
   --sircus: #7263e4;
+  --accent: #f25a43; /* the F mark's orange (Ty, 2026-10-28) */
   --elev-1: 0 0 0 1px rgba(0, 0, 0, 0.06), 0 1px 1px -0.5px rgba(0, 0, 0, 0.06);
   --elev-2: var(--elev-1), 0 3px 3px -1.5px rgba(0, 0, 0, 0.06);
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);

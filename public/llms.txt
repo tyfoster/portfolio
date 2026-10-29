@@ -1,0 +1,28 @@
+# Ty Foster
+
+> Ty Foster is a product and design leader: Head of Product and Design at Icite, an agentic identity threat detection platform, building technically complex, data-dense applications from the ground up with AI. Previously a product design manager at Deepwatch and a designer of tools for Schwab Wealth Advisory at Charles Schwab.
+
+Ty has deep experience building in cybersecurity and finance, has built products that helped grow ARR by $23M, and has helped build companies from nothing. Ty designs and iterates in code, working as a hybrid of product manager, designer and frontend engineer. Sircus is Ty's side project. Ty was previously a commercial photographer.
+
+## Case studies
+
+- [Icite: from the seed round to agent-native threat detection](https://tyfoster.me/icite/): Ty joined Icite before there was a team, helped raise a $5M seed round, and has led product and design since. Covers the product strategy, brand, performance-first foundations, the shift to AI agent visibility, treating agents as first-class identities, findings analysts and their agents trust, and how design teams change.
+- [Sircus: the simplest way to keep track of elected officials](https://tyfoster.me/sircus/): A side project Ty designed and built alone. Sircus matches how your lawmakers vote with where you stand, using bills, roll-call votes, campaign finance and stock-trade disclosures. Covers the brand, how it works, AI's role in reading public records, and designing for neutrality.
+
+## Previous work
+
+- [Deepwatch](https://deepwatch.com): Product design manager (2022–2024), leading a team of designers building an industry-leading MDR cybersecurity platform.
+- [Charles Schwab](https://www.schwab.com): Designed and built tools for Schwab Wealth Advisory (2019).
+
+## Contact
+
+- [Portfolio](https://tyfoster.me/)
+- [LinkedIn](https://www.linkedin.com/in/ty-foster-/)
+- [X](https://x.com/tyfoster)
+- Email: tyfoster@protonmail.com
+
+## Optional
+
+- [Icite](https://icite.io): the product
+- [Sircus](https://sircus.io): the product
+- [Photography](https://tyfoster.com): Ty's commercial photography work
