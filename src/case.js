@@ -172,7 +172,8 @@ function closeStage() {
 
 function expand(shot) {
   if (busy || current) return
-  shot.querySelector(".window, .phone, .shot-video") ? openStage(shot) : openImage(shot)
+  // data-expand="stage": anything else that scales up in place, such as an interactive diagram
+  shot.dataset.expand === "stage" || shot.querySelector(".window, .phone, .shot-video") ? openStage(shot) : openImage(shot)
 }
 function collapse() {
   if (busy || !current) return

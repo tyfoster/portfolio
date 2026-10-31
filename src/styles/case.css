@@ -1,5 +1,5 @@
 /* Case studies. Header: Figma 2725:15733. Section spacing: 2683:50571 and 2683:50568. Expanded image: 2725:15147.
-   Centred column: headline and image containers up to 913px, copy up to 604px.
+   Centred column: headline up to 913px, image containers up to 1040px, copy up to 604px.
    80px between sections and image containers on desktop, 40px on tablet and mobile;
    24px from a section title to its copy, 16px between paragraphs of one section. */
 
@@ -94,16 +94,16 @@
 .quote p { font-size: 22px; line-height: 32px; letter-spacing: 0.02em; color: var(--fg); }
 .quote footer { margin-top: 13px; color: var(--muted); }
 
-.figure { width: 100%; max-width: 913px; display: flex; flex-direction: column; align-items: center; gap: 24px; }
+.figure { width: 100%; max-width: 1040px; display: flex; flex-direction: column; align-items: center; gap: 24px; }
 .figure > figcaption { width: 100%; max-width: 604px; }
 
 .illustration { width: 271px; max-width: 60%; height: auto; }
 
 /* ---------- Image containers ---------- */
-.shot-slot { position: relative; width: 100%; max-width: 913px; aspect-ratio: 700 / 402; }
+.shot-slot { position: relative; width: 100%; max-width: 1040px; aspect-ratio: 700 / 402; }
 .figure > .shot-slot { max-width: none; }
 /* a row of two boxes under a screen (2741:15734, 2741:15737): 277 and 414 of 700, 241 tall, 9 apart; stacked on phones */
-.shot-row { width: 100%; max-width: 913px; display: grid; grid-template-columns: 277fr 414fr; column-gap: calc(100% * 9 / 700); aspect-ratio: 700 / 241; }
+.shot-row { width: 100%; max-width: 1040px; display: grid; grid-template-columns: 277fr 414fr; column-gap: calc(100% * 9 / 700); aspect-ratio: 700 / 241; }
 .shot-row > .shot-slot { aspect-ratio: auto; height: 100%; max-width: none; }
 @media (max-width: 639px) {
   .shot-row { grid-template-columns: 1fr; row-gap: 16px; aspect-ratio: auto; }
