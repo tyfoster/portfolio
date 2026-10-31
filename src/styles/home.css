@@ -30,7 +30,8 @@
 @media (min-width: 1200px) {
   /* fills the window with 80px on each side. The picture and the project row are one column, the window's height less the
      page's margins, so the row sits at the bottom of the window whatever the About copy's length; About ends level with
-     the row when it fits, and runs on below the fold when it does not (a laptop's 930px, Ty 2026-10-22) */
+     the row when it fits, and runs on below the fold when it does not (a laptop's 930px, Ty 2026-10-22). When it does,
+     the picture and the row stay put (sticky, at the page's top margin) and only the left column scrolls (Ty, 2026-10-31) */
   .home {
     min-height: 100svh;
     padding: 116px 80px 72px; /* top: 16px below the nav's fade; bottom: the project row ends 16px above the fixed footer */
@@ -44,7 +45,7 @@
   }
   .home-intro { grid-area: intro; }
   .about { grid-area: about; align-self: end; padding-top: 64px; }
-  .home-work { grid-area: work; align-self: start; display: flex; flex-direction: column; height: calc(100svh - 188px); }
+  .home-work { grid-area: work; align-self: start; position: sticky; top: 116px; display: flex; flex-direction: column; height: calc(100svh - 188px); }
   .showcase { flex: 1 1 auto; min-height: 360px; }
   .projects { flex: none; margin-top: 64px; }
   .work-cards, .work-previous { display: none; }
