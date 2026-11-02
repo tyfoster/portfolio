@@ -8,10 +8,10 @@ Ty has deep experience building in cybersecurity and finance, has built products
 
 - [Icite: from the seed round to agent-native threat detection](https://tyfoster.me/icite/): Ty joined Icite before there was a team, helped raise a $5M seed round, and has led product and design since. Covers the product strategy, brand, performance-first foundations, the shift to AI agent visibility, treating agents as first-class identities, findings analysts and their agents trust, and how design teams change.
 - [Sircus: the simplest way to keep track of elected officials](https://tyfoster.me/sircus/): A side project Ty designed and built alone. Sircus matches how your lawmakers vote with where you stand, using bills, roll-call votes, campaign finance and stock-trade disclosures. Covers the brand, how it works, AI's role in reading public records, and designing for neutrality.
+- [Deepwatch: building a product and design team, and a platform customers trusted](https://tyfoster.me/deepwatch/): As Product Design Manager (2022–2024), Ty hired the entire design team (both designers were promoted), managed product and design together, and led the customer platform for Deepwatch's managed detection and response service. Covers building a team of generalists, replacing a mobile-only prototype with no adoption, aligning sales, product and engineering on one vision, unifying a separate R&D group with the SOC and the wider company, and the results: customer retention up 12%, ARR growth through sales demo environments, and higher NPS.
 
 ## Previous work
 
-- [Deepwatch](https://deepwatch.com): Product design manager (2022–2024), leading a team of designers building an industry-leading MDR cybersecurity platform.
 - [Charles Schwab](https://www.schwab.com): Designed and built tools for Schwab Wealth Advisory (2019).
 
 ## Contact

@@ -25,6 +25,7 @@ export default defineConfig({
         home: resolve(root, "index.html"),
         icite: resolve(root, "icite/index.html"),
         sircus: resolve(root, "sircus/index.html"),
+        deepwatch: resolve(root, "deepwatch/index.html"),
         notFound: resolve(root, "404.html"),
       },
     },

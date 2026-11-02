@@ -1,6 +1,6 @@
 # Ty Foster: portfolio
 
-Personal work portfolio: home, and case studies for Icite and Sircus. Built with Vite and plain HTML, CSS and JavaScript.
+Personal work portfolio: home, and case studies for Icite, Sircus and Deepwatch. Built with Vite and plain HTML, CSS and JavaScript.
 
 ```bash
 npm ci
