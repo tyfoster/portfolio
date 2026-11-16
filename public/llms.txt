@@ -25,5 +25,5 @@ Ty has deep experience building in cybersecurity and finance, has built products
 
 - [Icite](https://icite.io): the product
 - [Sircus](https://sircus.io): the product
-- [Swatch](https://tyfoster.github.io/swatch/): a local design tool for refining color tokens
+- [Swatch](https://swatchtoken.com/): a local design tool for refining color tokens
 - [Photography](https://tyfoster.com): Ty's commercial photography work
