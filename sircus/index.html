@@ -231,6 +231,21 @@
           <p>I really believe that the politics and elections have turned into a Sircus. In the age of information it is becoming increasingly difficult to find clear, easy to understand and neutral information to base your vote on.</p>
         </section>
 
+        <!-- the highlight reel (Ty, 2026-11-17): full-size HEVC on wider screens where the browser plays it, the 720p H.264 otherwise.
+             The reel fades in from black over its first second. The poster is the first fully lit frame, at 1.25s, and
+             #t=1.25 starts the first play there, so the poster never cuts to black and almost nothing is skipped; each loop
+             after that runs from the start -->
+        <div class="shot-slot shot-slot--reel" style="--reel: 50 / 27" data-enter="xl">
+          <button class="shot" type="button" data-focus="0,0,100,100" aria-label="Expand: the Sircus highlight reel">
+            <span class="shot-stage">
+              <video class="shot-video" data-autoplay loop muted playsinline preload="none" poster="/media/sircus-reel-poster.jpg" aria-label="A highlight reel of Sircus: a lawmaker’s page, how their votes align with yours, and the topics that matter to you, in slow camera moves across the product">
+                <source src="/media/sircus-reel.mp4#t=1.25" type="video/mp4; codecs=&quot;hvc1.1.6.L123.B0&quot;" media="(min-width: 700px)" />
+                <source src="/media/sircus-reel-720.mp4#t=1.25" type="video/mp4" />
+              </video>
+            </span>
+          </button>
+        </div>
+
         <!-- 2683:50555 -->
         <img class="illustration" src="/img/sircus/circus-illustration.webp" width="543" height="457" loading="lazy" data-enter="l" alt="A donkey and an elephant in suits, arm in arm" />
       </div>

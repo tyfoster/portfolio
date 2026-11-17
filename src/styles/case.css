@@ -187,6 +187,8 @@ div.shot { cursor: default; }
    across, 11 apart (states) or 17 (government), one centred at rest. The script doubles the row, so moving it by half its
    length (one copy) loops without a seam; constant motion is linear. Phones take a taller box and larger seals. */
 .shot-slot--seals { aspect-ratio: 700 / 339; }
+/* a highlight reel keeps its own shape, so none of it is cropped: 16:9 unless --reel says otherwise */
+.shot-slot--reel { aspect-ratio: var(--reel, 16 / 9); }
 .seals { position: absolute; inset: 0; overflow: hidden; container-type: inline-size; display: flex; align-items: center; }
 .seal-track {
   --seal: calc(100cqw * 161 / 700);

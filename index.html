@@ -35,7 +35,7 @@
     <!-- @include nav -->
 
     <main class="home">
-      <p class="intro home-intro" data-enter="headline"><span class="intro-welcome">Welcome.</span> I lead product and design at Icite. I specialize in building technically complex and data-dense applications that are built from the ground-up with AI.</p>
+      <p class="intro home-intro" data-enter="headline" data-lines><span class="intro-welcome">Welcome.</span> I lead product and design at Icite. I specialize in building technically complex and data-dense applications that are built from the ground-up with AI.</p>
 
       <!-- Desktop: the picture (Icite by default, the hovered project's otherwise, 2665:30799) and the project row as one column, the window's
            height less the page's margins, so the row stays on screen however long the About copy runs -->
@@ -54,6 +54,10 @@
           <!-- Deepwatch (2806:16538) and Schwab (2806:17277) covers: the comp's fill with the logo centred (SIR-326) -->
           <div class="show show-deepwatch"><img src="/img/home/deepwatch-cover.svg" width="482" height="134" alt="" loading="lazy" /></div>
           <div class="show show-schwab"><img src="/img/home/schwab-cover.svg" width="250" height="250" alt="" loading="lazy" /></div>
+          <!-- product reels (home.js): each plays over whichever picture is showing, so a hover goes straight from that picture to the reel and back.
+               Both fade in from black over their first second, so a hover starts at 1.25s (#t and data-start), on the first lit frame -->
+          <video class="show-video" data-video="icite" data-start="1.25" muted loop playsinline preload="none" disableremoteplayback tabindex="-1"><source src="/media/icite-reel.mp4#t=1.25" type="video/mp4; codecs=&quot;hvc1.1.6.L123.B0&quot;" /><source src="/media/icite-reel-720.mp4#t=1.25" type="video/mp4" /></video>
+          <video class="show-video" data-video="sircus" data-start="1.25" muted loop playsinline preload="none" disableremoteplayback tabindex="-1"><source src="/media/sircus-reel.mp4#t=1.25" type="video/mp4; codecs=&quot;hvc1.1.6.L123.B0&quot;" /><source src="/media/sircus-reel-720.mp4#t=1.25" type="video/mp4" /></video>
         </div>
 
         <!-- Desktop project row (2665:31072); each item is one link target (2665:31073) -->
@@ -62,7 +66,7 @@
             <span class="project-head"><span class="project-title">Icite</span><span class="project-meta">Current</span></span>
             <span class="project-desc">Agentic Identity Threat Detection Platform</span>
           </a>
-          <a class="project" href="/sircus/" data-project="sircus" data-image data-enter="m">
+          <a class="project" href="/sircus/" data-project="sircus" data-image data-still="fallback" data-enter="m">
             <span class="project-head"><span class="project-title">Sircus</span><span class="project-meta">Side project</span></span>
             <span class="project-desc">The easiest way to keep track of your elected officials</span>
           </a>
@@ -117,11 +121,11 @@
 
       <!-- About: the mobile frame's copy at every size -->
       <section class="about" id="about" aria-labelledby="about-title">
-        <h2 class="about-title" id="about-title" data-enter="s">About</h2>
+        <h2 class="about-title" id="about-title" data-enter="s" data-lines>About</h2>
         <div class="about-copy" data-stagger>
-          <p data-enter="m">I have deep experience building in cybersecurity and finance. I’ve built products that have helped grow ARR by $23M, and I’ve helped build companies from nothing. Today, I’m Head of Product and Design at Icite, where I am building AI identity tools for security operations teams.</p>
-          <p data-enter="m">I am a builder at heart and I love the act of creating. For example, check out <a class="text-link" href="/sircus/">Sircus</a> which is a tool I am currently building that helps anyone understand congress and our election process. If you’re a designer, <a class="text-link" href="https://swatchtoken.com/" target="_blank" rel="noopener">Swatch</a> is a design tool for refining color tokens locally. I also love photography. In a past life, I was a commercial photographer—you can view that work <a class="text-link" href="https://tyfoster.com" target="_blank" rel="noopener">here</a>.</p>
-          <p data-enter="m">I believe deeply in privacy. I think it is an inalienable right that has been commoditized and is now no longer affordable by most people.</p>
+          <p data-enter="m" data-lines>I have deep experience building in cybersecurity and finance. I’ve built products that have helped grow ARR by $23M, and I’ve helped build companies from nothing. Today, I’m Head of Product and Design at Icite, where I am building AI identity tools for security operations teams.</p>
+          <p data-enter="m" data-lines>I am a builder at heart and I love the act of creating. For example, check out <a class="text-link" href="/sircus/">Sircus</a> which is a tool I am currently building that helps anyone understand congress and our election process. If you’re a designer, <a class="text-link" href="https://swatchtoken.com/" target="_blank" rel="noopener">Swatch</a> is a design tool for refining color tokens locally. I also love photography. In a past life, I was a commercial photographer—you can view that work <a class="text-link" href="https://tyfoster.com" target="_blank" rel="noopener">here</a>.</p>
+          <p data-enter="m" data-lines>I believe deeply in privacy. I think it is an inalienable right that has been commoditized and is now no longer affordable by most people.</p>
         </div>
       </section>
     </main>

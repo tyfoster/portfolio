@@ -6,3 +6,5 @@ dist/
 *.log
 # the deploy brief lives on the project tracker, not in the public repository
 HANDOFF.md
+# source masters for the home page reels; the web versions ship from public/media
+Videos/

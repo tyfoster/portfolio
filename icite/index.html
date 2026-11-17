@@ -265,6 +265,21 @@
         <div class="copy" data-enter="m">
           <p>Because of this I think teams change. I’d hire individuals who have a strong sense of agency and who are comfortable with ambiguity. Smaller teams per problem work increasingly well. It’s becoming more of a requirement that all teams have a fundamental understanding of the entire product, the market and the customer. Personally, having engineering and design spend time deeply understanding the problem and scoping a specific use case has proven invaluable.</p>
         </div>
+
+        <!-- the highlight reel (Ty, 2026-11-17): full-size HEVC on wider screens where the browser plays it, the 720p H.264 otherwise.
+             The reel fades in from black over its first second. The poster is the first fully lit frame, at 1.25s, and
+             #t=1.25 starts the first play there, so the poster never cuts to black and almost nothing is skipped; each loop
+             after that runs from the start -->
+        <div class="shot-slot shot-slot--reel" data-enter="xl">
+          <button class="shot" type="button" data-focus="0,0,100,100" aria-label="Expand: the Icite highlight reel">
+            <span class="shot-stage">
+              <video class="shot-video" data-autoplay loop muted playsinline preload="none" poster="/media/icite-reel-poster.jpg" aria-label="A highlight reel of Icite: an identity record, its access graph, findings and detections, in slow camera moves across the product">
+                <source src="/media/icite-reel.mp4#t=1.25" type="video/mp4; codecs=&quot;hvc1.1.6.L123.B0&quot;" media="(min-width: 700px)" />
+                <source src="/media/icite-reel-720.mp4#t=1.25" type="video/mp4" />
+              </video>
+            </span>
+          </button>
+        </div>
       </div>
 
       <!-- 2725:15707 -->

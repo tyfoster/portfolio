@@ -22,6 +22,12 @@
 @media (prefers-reduced-motion: no-preference) {
   .about-copy .text-link:hover, .about-copy .text-link:focus-visible { animation: dash-march 600ms var(--ease-out); }
 }
+/* a link that runs over more than one line has its text revealed line by line inside it (main.js); its dashed
+   underline, drawn by the link itself, fades in with the first of those lines rather than showing at once */
+@media (prefers-reduced-motion: no-preference) {
+  :where(.is-split) .text-link[data-line-wrap] { animation: line-dash 900ms cubic-bezier(0.2, 0.65, 0.3, 0.9) var(--line-delay, 0ms) backwards; }
+}
+@keyframes line-dash { from { --dash: transparent; } }
 @keyframes dash-march { from { background-position-x: 0; } to { background-position-x: 14px; } }
 
 .section-label { font-weight: 600; letter-spacing: 0.03em; line-height: 24px; color: var(--muted-warm); }
@@ -108,6 +114,26 @@
 .show-deepwatch img { width: min(100cqw * 482 / 921, 100cqh * 482 / 598); height: auto; }
 .show-schwab { background: #00a0df; }
 .show-schwab img { width: min(100cqw * 250 / 921, 100cqh * 250 / 598); height: auto; }
+/* Icite and Sircus: the product reel plays over the picture while that project is pointed at (home.js). The reels sit
+   above every picture, not inside their own project's, so one fades in over whatever is showing and back out to it:
+   Sircus's logo-on-purple still never flashes on the way in or out. A reel fades in only once it has a frame to
+   show, so the picture holds until then. */
+.show-video {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #09090b;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 320ms var(--ease-out);
+}
+.show-video.is-playing { opacity: 1; }
+/* going from one reel to the other, the incoming one fades in above the outgoing one, which leaves only once it is
+   covered: the picture underneath never shows between them */
+.show-video.is-top { z-index: 2; }
 .showcase[data-show="icite"] .show-icite,
 .showcase[data-show="sircus"] .show-sircus,
 .showcase[data-show="deepwatch"] .show-deepwatch,
