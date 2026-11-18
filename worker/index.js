@@ -54,21 +54,31 @@ export default {
       wanted.delete("Range")
       wanted.delete("If-Range")
       const whole = await env.ASSETS.fetch(new Request(request.url, { method: request.method, headers: wanted }))
-      const size = Number(whole.headers.get("Content-Length"))
-      if (whole.status !== 200 || !Number.isSafeInteger(size) || size <= 0) return whole
+      if (whole.status !== 200) return whole
+      // the file's size comes from Content-Length when the assets binding gives one. Inside a Worker it usually
+      // does not, so the file is read into memory to learn it (the largest here is 8 MB) and cut from there.
+      let size = Number(whole.headers.get("Content-Length"))
+      let bytes = null
+      if (!Number.isSafeInteger(size) || size <= 0) {
+        const get = request.method === "GET" ? whole : await env.ASSETS.fetch(new Request(request.url, { headers: wanted }))
+        bytes = await get.arrayBuffer()
+        size = bytes.byteLength
+        if (!size) return env.ASSETS.fetch(request)
+      }
       const headers = new Headers(whole.headers)
       headers.set("Accept-Ranges", "bytes")
       const range = parseRange(header, size)
-      if (range === null) return new Response(whole.body, { status: 200, headers })
+      if (range === null) return new Response(bytes ?? whole.body, { status: 200, headers })
       if (range === "invalid") {
-        whole.body?.cancel()
+        if (!bytes) whole.body?.cancel()
         headers.set("Content-Range", `bytes */${size}`)
         headers.delete("Content-Length")
         return new Response(null, { status: 416, headers })
       }
       headers.set("Content-Range", `bytes ${range.start}-${range.end}/${size}`)
       headers.set("Content-Length", String(range.end - range.start + 1))
-      if (request.method === "HEAD" || !whole.body) return new Response(null, { status: 206, headers })
+      if (request.method === "HEAD") return new Response(null, { status: 206, headers })
+      if (bytes) return new Response(bytes.slice(range.start, range.end + 1), { status: 206, headers })
       return new Response(slice(whole.body, range.start, range.end), { status: 206, headers })
     } catch {
       return env.ASSETS.fetch(request)
