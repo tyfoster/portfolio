@@ -1,11 +1,16 @@
-// Cloudflare Workers static assets: the built site in dist/, nothing else.
+// Cloudflare Workers static assets: the built site in dist/.
+// worker/index.js runs only in front of /media/*, to answer Range requests so video can seek; every other path is
+// served straight from the static assets without running the Worker.
 // Deploy from the PERSONAL Cloudflare account.
 {
   "name": "ty-foster-portfolio",
+  "main": "worker/index.js",
   "compatibility_date": "2026-10-01",
   "assets": {
     "directory": "./dist",
+    "binding": "ASSETS",
     "html_handling": "auto-trailing-slash",
-    "not_found_handling": "404-page"
+    "not_found_handling": "404-page",
+    "run_worker_first": ["/media/*"]
   }
 }
